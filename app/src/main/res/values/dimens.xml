@@ -1,0 +1,64 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="padding">16dp</dimen>
+    <dimen name="padding_half">8dp</dimen>
+
+    <dimen name="textsize_large">18sp</dimen>
+    <dimen name="textsize_normal">16sp</dimen>
+    <dimen name="textsize_small">14sp</dimen>
+
+    <!-- Android Design Support Library -->
+    <dimen name="navigation_max_width">320dp</dimen>
+
+    <!--Global configuration dimen-->
+    <dimen name="action_bar_default_height">48dp</dimen>
+    <dimen name="fab_margin_height">190dp</dimen>
+    <dimen name="fab_default_elevation">4dp</dimen>
+    <dimen name="app_bar_elevation">3dp</dimen>
+    <dimen name="app_bar_default_elevation">0dp</dimen>
+    <dimen name="live_user_layout_height">70dp</dimen>
+    <dimen name="line_height">1dp</dimen>
+    <dimen name="line_width">120dp</dimen>
+    <dimen name="login_button_height">45dp</dimen>
+    <dimen name="default_tiny_padding">5dp</dimen>
+    <dimen name="default_small_padding">8dp</dimen>
+    <dimen name="default_tiny_margin">3dp</dimen>
+    <dimen name="default_general_margin">10dp</dimen>
+    <dimen name="default_grow_margin">20dp</dimen>
+    <dimen name="default_long_margin">30dp</dimen>
+    <dimen name="head_image_bg_height">128dp</dimen>
+
+    <!--common text size-->
+    <dimen name="default_tiny_text_size">12sp</dimen>
+    <dimen name="default_small_text_size">14sp</dimen>
+    <dimen name="default_medium_text_size">16sp</dimen>
+    <dimen name="default_big_text_size">18sp</dimen>
+    <dimen name="default_big_large_text_size">22sp</dimen>
+
+    <!-- Navigation -->
+    <dimen name="navigation_header_height">200dp</dimen>
+    <dimen name="navigation_avatar_size">74dp</dimen>
+    <dimen name="navigation_subtitle_secondary_text_size">14sp</dimen>
+
+    <!--tab layout size-->
+    <dimen name="tab_indicator_corner_tiny_radius">1dp</dimen>
+    <dimen name="tab_indicator_corner_small_radius">1.5dp</dimen>
+    <dimen name="tab_indicator_small_height">2dp</dimen>
+    <dimen name="tab_indicator_default_height">3dp</dimen>
+    <dimen name="tab_indicator_small_width">25dp</dimen>
+    <dimen name="tab_indicator_center_width">30dp</dimen>
+    <dimen name="tab_indicator_long_width">40dp</dimen>
+    <dimen name="tab_layout_small_height">40dp</dimen>
+    <dimen name="tab_layout_default_height">48dp</dimen>
+
+
+    <!--circle head portrait size-->
+    <dimen name="circle_default_size">120dp</dimen>
+    <dimen name="circle_default_width">1dp</dimen>
+    <dimen name="circle_margin_top">20dp</dimen>
+    <dimen name="text_margin_top">40dp</dimen>
+    <dimen name="circle_user_small_size">34dp</dimen>
+
+</resources>

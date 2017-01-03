@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/2.0.1/516c03b21d50a644d538de0f0369c620989cd8f0/jsr305-2.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="516c03b21d50a644d538de0f0369c620989cd8f0">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/jsr305-2.0.1_0f36b2974f2a4842452b7590519bc848f2b2e538/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.0.0-beta4/739e00dea1f0ac04fdb9b6160d667e23cc50a791/retrofit-2.0.0-beta4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="739e00dea1f0ac04fdb9b6160d667e23cc50a791">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.0.0-beta4_828d36f86302caad1b12ad15d2827ebd246fdab3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d4c4b83de2f6412072d2a29b1b7a5b03edaad5ff">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/io.reactivex-rxandroid-1.1.0_b73bf0f698991ae0c6b923ce2cae1c7eca631b5b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_9c3cad6c95437266ce59a84859166ed2ea26af40/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.jakewharton.rxbinding/rxbinding-appcompat-v7/0.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c2ee7a8a35064b507c1f4576034cdea474561bcd">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jakewharton.rxbinding-rxbinding-appcompat-v7-0.3.0_bd2f3f46f4617bac1746aa82d0883f05a3f3a3fe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_90e1465cc99c5bd664f4b055343f37fb204266d1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/com.squareup.haha/haha/2.0.3/640a438d2d415c056ca6a673ac26b183b044e160/haha-2.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="640a438d2d415c056ca6a673ac26b183b044e160">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/haha-2.0.3_7e8ea58c9932dae330e9a2866ede0fb5cd2a3ba9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_84d8d54b6b8b020ae88a2e579ad039f7be567569/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.jakewharton.rxbinding/rxbinding-design/0.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8b694e6b7d2d25aa277d24417039105217b73fd5">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jakewharton.rxbinding-rxbinding-design-0.3.0_d0307972e3d187baf1c49a51222565faecc81123/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.4/3cc424c6eda381bf4aee40dc3ccdecc27b2106aa/rxjava-1.1.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3cc424c6eda381bf4aee40dc3ccdecc27b2106aa">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-1.1.4_c8d64631205111e68c57fab1fcbfb9ff20383632/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.flyco.tablayout/FlycoTabLayout_Lib/2.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f4af6c5a7706354b4ad4673d1ad8c498c9e2f661">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.flyco.tablayout-FlycoTabLayout_Lib-2.0.0_03179ccf9b4b3e1718bdf6aebcfe44aa76cd7add/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_12b1875415c0aa8a121069bd32c7d637655ea4be/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/com.facebook.stetho/stetho/1.3.1/2c4076b466a0eb4d6ddf5721edd35cd1adc1f317/stetho-1.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2c4076b466a0eb4d6ddf5721edd35cd1adc1f317">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/stetho-1.3.1_78e8eae4a45e3605101d0e6a435e942fcb968ce6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.2.0_220e98e14dbe28049433ff957f76ec1cd5607372/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/commons-cli/commons-cli/1.2/2bf96b7aa8b611c177d329452af1dc933e14501c/commons-cli-1.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2bf96b7aa8b611c177d329452af1dc933e14501c">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/commons-cli-1.2_8f6b9cc270038ee3bd2a16207e300ad9b0b76fdc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_93ec3db6f0eed4556df6d7348b5f1d2f221c9fd0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_1e2627e61f678d3e5402d057eacfdc7621ad275b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.trello/rxlifecycle/0.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3a98a50c56978d02c0651d12f5a26c3e7c31c397">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.trello-rxlifecycle-0.6.1_3256bd40a6e32394f9f14957677b99c2afcd58fb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.0_4f0a5baa8ac4f810c1fb1bfb9688fc00270bd12a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_094344a6fc112b9ba1aa9e32a276c17428d9ce27/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.4/695b63d702f505b9b916e02272e3b6381bade7f/gson-2.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.4_be56bd3f900289e6229b3e41a28cc5c114296c63/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_865c2c0a0e2421e6008399d512dbd975e2500070/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_db50453b8380a662bba646551247bde5346b909a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-watcher/1.5/288101b16513158c2923ad3fb6161d1452b65e73/leakcanary-watcher-1.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="288101b16513158c2923ad3fb6161d1452b65e73">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/leakcanary-watcher-1.5_cd152cf83a53cbcf04b3a80e63b981afa68e15d9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.bilibili/magicasakura/0.1.5/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="781e05d0149f26f73710dcfa7954db5fec176221">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.bilibili-magicasakura-0.1.5_9bb7caeb2f0955145d2422edd820000651e675cc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/logging-interceptor/3.2.0/a56f28d5b7fab623c6c1d2afa08dd496d873ac21/logging-interceptor-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a56f28d5b7fab623c6c1d2afa08dd496d873ac21">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/logging-interceptor-3.2.0_6c641ffc4f0d72e6b2585eb146f5b5b1a93df465/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.squareup.leakcanary/leakcanary-android/1.5/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c7a2672b3122b897a0751f327929ae405ea02bf7">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.squareup.leakcanary-leakcanary-android-1.5_4f6eb98fffa323167f9d21410bd2a978b13408dd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.0_e374f7bc60696864125c8e96635ba0b2592ab2cd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_a29722a96ed1b366074ad8c3d5e78fd486a1d7ab/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.miguelcatalan/materialsearchview/1.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="918e3e9514d90e54421b674cf0c95044f4e155ad">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.miguelcatalan-materialsearchview-1.4.0_beaf837430d170f4b1d607975700e8153133e5c0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_a41045fc561a8302dc8100a24e8ddb0040692ca3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.jakewharton.rxbinding/rxbinding/0.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ffc09f4e5bdebe068e5101f587dadc42b60fbfe4">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jakewharton.rxbinding-rxbinding-0.4.0_3edd7eea69bbc67280ef91bbb45f0157c14c2f62/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.0_3e611631e26329f98f54c7a157784b27e74427af/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.4.0/ea392375cf9ff59234a82e7928a204215ccc98cd/butterknife-annotations-8.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea392375cf9ff59234a82e7928a204215ccc98cd">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-annotations-8.4.0_a455696318140ed9fb2b543aa98806520d71b6c0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.0.0-beta4/de5935a367ba5e343e9df786ac8fc0c7d52b5f0c/converter-gson-2.0.0-beta4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="de5935a367ba5e343e9df786ac8fc0c7d52b5f0c">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.0.0-beta4_331e6cf16d69a5aee3129d551a729959361e29f1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/adapter-rxjava/2.0.0-beta4/bd49baf667542c7d06f71e598bdee7fe57272013/adapter-rxjava-2.0.0-beta4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bd49baf667542c7d06f71e598bdee7fe57272013">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/adapter-rxjava-2.0.0-beta4_fd8ec394d11d5de631451f6b389e1295afffc554/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_5867a6f35ff1cb8bf0cfc5fa25276f183f251195/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_c957121930d1c2c5386280a51e5b22ebd61053b0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d805ab1d647c3a89a9225c64700c0822b5957af7">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_5fa956650d5500796dd1c7be53e30c66fa36ae95/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.trello/rxlifecycle-components/0.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5c90d2e1f0959b6e1f312b9f53049a342f0e82df">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.trello-rxlifecycle-components-0.6.1_c0d70532e6e4655f7699fb49715ac35bf1638178/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/com.facebook.stetho/stetho-okhttp3/1.3.1/c596b3b33b5a92107bb70544bb5ee35f597bc6d8/stetho-okhttp3-1.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c596b3b33b5a92107bb70544bb5ee35f597bc6d8">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/stetho-okhttp3-1.3.1_ce2a6af1cfa606f6d9bdd01e49a20e355482f9d1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-analyzer/1.5/3277b0b0c2ace34a2edb5ddf9d1f67829561fb8f/leakcanary-analyzer-1.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3277b0b0c2ace34a2edb5ddf9d1f67829561fb8f">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/leakcanary-analyzer-1.5_b5c1eaaa1182e9ab1811c088aa2e4c1914e03aea/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0bf7d7346b0e330b19b114f9d6dabd488c87367f">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7310efe1d47360d7de7ab8054cca485c3a5b12b5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a07818a1ecabdb149998823429cce555af4b9cba">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jakewharton-butterknife-8.4.0_4bd3796d7cd8706a7db4ed6030f256cf3097b9be/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.0_209d46c46bcbabbfe285b1a6e1687e09f2aa432d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.0_65b1524f9a8d09556d21b1218069bba27519c9a3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/Users/zhouxie/Workspaces/workspace_androidstudio/HeroVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_74fa5b23d2aeae20f6bde3d3fc8fb5fec7580cdc/classes.dex" />
+    </item>
+
+</items>
