@@ -30,6 +30,16 @@
                   android:screenOrientation="landscape"
                   android:theme="@style/AppTheme.FullScreen"
             />
+
+        <activity android:name=".mediaplayer.VideoPlayerActivity"
+                  android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+                  android:exported="false"
+                  android:label="@string/app_name"
+                  android:launchMode="singleTop"
+                  android:screenOrientation="landscape"
+                  android:theme="@style/AppTheme.FullScreen"
+                  android:windowSoftInputMode="stateAlwaysHidden"
+            />
     </application>
 
 </manifest>

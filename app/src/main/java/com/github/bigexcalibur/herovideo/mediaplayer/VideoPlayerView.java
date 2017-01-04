@@ -114,7 +114,7 @@ public class VideoPlayerView extends SurfaceView implements MediaPlayerListener
 
     private OnBufferingUpdateListener mOnBufferingUpdateListener;
 
-//    private OnControllerEventsListener mOnControllerEventsListener;
+    private OnControllerEventsListener mOnControllerEventsListener;
 
     private int mCurrentBufferPercentage;
 
@@ -629,12 +629,12 @@ public class VideoPlayerView extends SurfaceView implements MediaPlayerListener
 
         mOnInfoListener = l;
     }
-//
-//    public void setOnControllerEventsListener(OnControllerEventsListener l)
-//    {
-//
-//        mOnControllerEventsListener = l;
-//    }
+
+    public void setOnControllerEventsListener(OnControllerEventsListener l)
+    {
+
+        mOnControllerEventsListener = l;
+    }
 
     private void release(boolean cleartargetstate)
     {
@@ -731,7 +731,7 @@ public class VideoPlayerView extends SurfaceView implements MediaPlayerListener
             mCurrentState = STATE_PLAYING;
         }
         mTargetState = STATE_PLAYING;
-//        mOnControllerEventsListener.OnVideoResume();
+        mOnControllerEventsListener.OnVideoResume();
     }
 
     @Override
@@ -747,7 +747,7 @@ public class VideoPlayerView extends SurfaceView implements MediaPlayerListener
             }
         }
         mTargetState = STATE_PAUSED;
-//        mOnControllerEventsListener.onVideoPause();
+        mOnControllerEventsListener.onVideoPause();
     }
 
     public void resume()

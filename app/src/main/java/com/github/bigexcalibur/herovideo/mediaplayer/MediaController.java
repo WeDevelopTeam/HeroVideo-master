@@ -24,6 +24,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 import com.github.bigexcalibur.herovideo.R;
+import com.github.bigexcalibur.herovideo.mediaplayer.callback.DanmukuSwitchListener;
 import com.github.bigexcalibur.herovideo.mediaplayer.callback.MediaPlayerListener;
 import com.github.bigexcalibur.herovideo.mediaplayer.callback.VideoBackListener;
 import com.github.bigexcalibur.herovideo.util.LogUtil;
@@ -87,7 +88,7 @@ public class MediaController extends FrameLayout
 
     private boolean mDanmakuShow = false;
 
-//    private DanmukuSwitchListener mDanmukuSwitchListener;
+    private DanmukuSwitchListener mDanmukuSwitchListener;
 
     private ImageView mBack;
 
@@ -95,11 +96,11 @@ public class MediaController extends FrameLayout
 
     private ImageView mTvPlay;
 
-//    public void setDanmakuSwitchListener(DanmukuSwitchListener danmukuSwitchListener)
-//    {
-//
-//        this.mDanmukuSwitchListener = danmukuSwitchListener;
-//    }
+    public void setDanmakuSwitchListener(DanmukuSwitchListener danmukuSwitchListener)
+    {
+
+        this.mDanmukuSwitchListener = danmukuSwitchListener;
+    }
 
     public void setVideoBackEvent(VideoBackListener videoBackListener)
     {
@@ -340,13 +341,13 @@ public class MediaController extends FrameLayout
             {
                 mDanmakuImage.setImageResource(R.drawable.bili_player_danmaku_is_open);
                 mDanmakuText.setText("弹幕开");
-//                mDanmukuSwitchListener.setDanmakushow(true);
+                mDanmukuSwitchListener.setDanmakushow(true);
                 mDanmakuShow = false;
             } else
             {
                 mDanmakuImage.setImageResource(R.drawable.bili_player_danmaku_is_closed);
                 mDanmakuText.setText("弹幕关");
-//                mDanmukuSwitchListener.setDanmakushow(false);
+                mDanmukuSwitchListener.setDanmakushow(false);
                 mDanmakuShow = true;
             }
         });

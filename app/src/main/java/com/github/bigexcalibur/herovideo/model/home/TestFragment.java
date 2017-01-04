@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.github.bigexcalibur.herovideo.R;
-import com.github.bigexcalibur.herovideo.model.common.TestPlayActivity;
+import com.github.bigexcalibur.herovideo.mediaplayer.VideoPlayerActivity;
 
 /**
  * Created by Xie.Zhou on 2017/1/4.
@@ -38,7 +38,7 @@ public class TestFragment extends Fragment {
 
         });
         view.findViewById(R.id.btn_test1).setOnClickListener(v -> {
-            startActivity(new Intent(getContext(), TestPlayActivity.class));
+            startActivity(new Intent(getContext(), VideoPlayerActivity.class));
         });
     }
 
