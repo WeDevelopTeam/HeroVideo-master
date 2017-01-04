@@ -3,6 +3,7 @@
 *.ap_
 .gradle
 .idea
+*.iml
 
 # Files for the ART/Dalvik VM
 *.dex
@@ -51,3 +52,6 @@ build/
 
 
 .DS_Store
+/.idea
+/*.iml
+/app/*.iml
