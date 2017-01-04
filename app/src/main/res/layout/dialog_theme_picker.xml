@@ -16,7 +16,7 @@
         android:paddingRight="?attr/dialogPreferredPadding"
         android:paddingTop="@dimen/abc_dialog_padding_top_material"
         android:singleLine="true"
-        android:text="Card Picker"
+        android:text="@string/theme_pick"
         android:textAlignment="viewStart"
         android:textSize="@dimen/textsize_large" />
 

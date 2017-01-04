@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.bilibili.magicasakura.utils.ThemeUtils;
 import com.github.bigexcalibur.herovideo.R;
@@ -60,7 +63,24 @@ public abstract class RxBaseActivity extends RxAppCompatActivity implements Them
     public void finishTask() {
     }
 
-    //MagicSakura 主题切换
+    // MagicSakura 主题切换初始化
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= 21) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.setStatusBarColor(ThemeUtils.getColorById(this, R.color.theme_color_primary_dark));
+            ActivityManager.TaskDescription description = new ActivityManager.TaskDescription(null, null, ThemeUtils.getThemeAttrColor(this, android.R.attr.colorPrimary));
+            setTaskDescription(description);
+        }
+    }
+
+
+    // MagicSakura 主题切换
+
     @Override
     public void onConfirm(int currentTheme) {
 

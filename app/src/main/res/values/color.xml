@@ -3,7 +3,7 @@
     <color name="theme_color_primary">#fb7299</color>
     <color name="theme_color_primary_dark">#b85671</color>
     <color name="theme_color_primary_trans">#99f0486c</color>
-    <color name="theme_color_secondary">#fb7299</color>
+    <color name="theme_color_secondary">#2d2d2d</color>
 
     <color name="text_primary_color">#2d2d2d</color>
     <color name="window_background">#eaeaea</color>

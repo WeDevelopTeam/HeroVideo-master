@@ -18,6 +18,8 @@
     <string name="test_level">Lv9</string>
     <string name="members">正式会员</string>
 
+    <!--主题选择-->
+    <string name="theme_pick">主题选择</string>
 
     <!-- Navigation Items -->
     <string name="item_home">主页</string>
