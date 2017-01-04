@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_bar_default_height"
+        android:background="@color/media_controller_bg">
+
+
+        <ImageView
+            android:id="@+id/media_controller_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/default_general_margin"
+            android:padding="@dimen/default_general_margin"
+            android:src="@drawable/bili_player_back_button"
+            android:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/media_controller_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/default_general_margin"
+            android:layout_toEndOf="@+id/media_controller_back"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/default_medium_text_size" />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/media_controller_tv_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/media_controller_controls"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/default_general_margin"
+        android:padding="@dimen/default_general_margin"
+        android:src="@drawable/ic_tv_play" />
+
+
+    <LinearLayout
+        android:id="@+id/media_controller_controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/media_controller_bg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <SeekBar
+                android:id="@+id/media_controller_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:max="1000"
+                android:maxHeight="@dimen/default_tiny_margin"
+                android:minHeight="@dimen/default_tiny_margin"
+                android:paddingLeft="@dimen/activity_vertical_margin"
+                android:paddingRight="@dimen/activity_vertical_margin"
+                android:progressDrawable="@color/colorPrimary"
+                android:thumb="@drawable/videoplayer_erect_icon_round" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/media_controller_controls_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mediacontroller_bottom_layout_center_margin"
+            android:layout_marginRight="@dimen/mediacontroller_bottom_layout_center_margin"
+            android:layout_marginTop="@dimen/mediacontroller_buttons_top_margin"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/media_controller_play_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/default_general_margin"
+                android:background="@null"
+                android:gravity="center"
+                android:src="@drawable/bili_player_play_can_play" />
+
+
+            <TextView
+                android:id="@+id/media_controller_time_current"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="22dp"
+                android:layout_toEndOf="@+id/media_controller_play_pause"
+                android:textColor="@color/white"
+                android:textSize="@dimen/default_tiny_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/time_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_toEndOf="@+id/media_controller_time_current"
+                android:text="/"
+                android:textColor="@color/white"
+                android:textSize="@dimen/default_tiny_text_size" />
+
+
+            <TextView
+                android:id="@+id/media_controller_time_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/time_line"
+                android:textColor="@color/white"
+                android:textSize="@dimen/default_tiny_text_size"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:id="@+id/media_controller_danmaku_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/default_grow_margin"
+                android:layout_toStartOf="@+id/media_controller_controls_quality_layout"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/default_tiny_margin">
+
+                <ImageView
+                    android:id="@+id/media_controller_danmaku_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bili_player_danmaku_is_open" />
+
+                <TextView
+                    android:id="@+id/media_controller_danmaku_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/mediacontroller_bottom_layout_danmaku_padding"
+                    android:text="@string/danmaku_switch"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/default_tiny_text_size" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/media_controller_controls_quality_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/default_grow_margin"
+                android:layout_toStartOf="@+id/media_controller_controls_lock_layout"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/default_tiny_margin">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_player_media_quality_medium" />
+
+                <TextView
+                    android:id="@+id/media_controller_quality_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/mediacontroller_bottom_layout_danmaku_padding"
+                    android:text="@string/quality_medium"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/default_tiny_text_size" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/media_controller_controls_lock_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="@dimen/default_general_margin"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/default_tiny_margin">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_player_locked_2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/mediacontroller_bottom_layout_danmaku_padding"
+                    android:text="@string/lock"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/default_tiny_text_size" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

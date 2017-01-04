@@ -5,4 +5,15 @@
     <color name="navigation_background_light">#FFF8F8F8</color>
     <color name="nav_head_roung_text_background">#FB7BA0</color>
     <color name="nav_head_round_background">#FDC7D6</color>
+
+    <color name="yellow_50">#FFD11B</color>
+    <color name="yellow_30">#FEA501</color>
+    <color name="pink_30">#FD7071</color>
+    <color name="blue_30">#20C1FD</color>
+    <color name="white_30">#F2F2F2</color>
+    <color name="white_80">#3b3b3b</color>
+    <color name="media_controller_bg">#99000000</color>
+    <color name="colorPrimary">#3b3b3b</color>
+    <color name="colorPrimaryDark">#222323</color>
+
 </resources>

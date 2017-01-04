@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tv_test"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:textSize="50sp"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        />
+
+    <Button
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:id="@+id/btn_test1"
+        android:text="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_test"/>
+
+
+</RelativeLayout>

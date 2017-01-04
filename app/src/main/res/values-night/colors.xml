@@ -7,7 +7,6 @@
     <color name="yellow_30">#FEA501</color>
     <color name="pink_30">#FD7071</color>
     <color name="blue_30">#20C1FD</color>
-    <color name="white">#FFFFFF</color>
     <color name="white_30">#F2F2F2</color>
     <color name="white_80">#3b3b3b</color>
     <color name="orange_500">#FF9800</color>
@@ -40,6 +39,5 @@
     <color name="nav_head_image_background">#343434</color>
     <color name="nav_head_round_background">#A8A8A8</color>
     <color name="nav_head_roung_text_background">#404040</color>
-
 
 </resources>

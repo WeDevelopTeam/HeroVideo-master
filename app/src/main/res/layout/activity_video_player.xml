@@ -1,0 +1,80 @@
+<FrameLayout android:id="@+id/playerFrame"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.github.bigexcalibur.herovideo.mediaplayer.VideoPlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <master.flame.danmaku.ui.widget.DanmakuView
+        android:id="@+id/sv_danmaku"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <RelativeLayout
+        android:id="@+id/buffering_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <com.github.bigexcalibur.herovideo.ui.widget.CircleProgressView
+            android:id="@+id/video_loading_progress"
+            android:layout_width="@dimen/circle_progress_view_small_size"
+            android:layout_height="@dimen/circle_progress_view_small_size"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            app:matProg_barColor="?attr/colorPrimary"
+            app:matProg_barWidth="@dimen/circle_progress_view_default_border_width"
+            app:matProg_progressIndeterminate="true" />
+
+        <TextView
+            android:id="@+id/video_loading_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/video_loading_progress"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="@dimen/default_general_margin"
+            android:text="@string/video_loading"
+            android:textColor="@color/white"
+            android:textSize="@dimen/default_medium_text_size" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/video_start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/white_30"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/bili_anim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/anim_video_loading" />
+
+        <TextView
+            android:id="@+id/video_start_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="@string/video_init"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/default_tiny_text_size" />
+    </RelativeLayout>
+</FrameLayout>

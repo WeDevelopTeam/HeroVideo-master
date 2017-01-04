@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+
+    <string-array name="sections">
+        <item>@string/section_live</item>
+        <item>@string/section_recommend</item>
+        <item>@string/section_bangumi</item>
+        <item>@string/section_more</item>
+        <item>@string/section_focus</item>
+        <item>@string/section_discover</item>
+    </string-array>
+
     <string-array name="query_suggestions">
         <item>re:从零开始的异世界生活</item>
         <item>守望先锋</item>

@@ -1,4 +1,4 @@
-package bigexcalibur.github.com.herovideo.api;
+package com.github.bigexcalibur.herovideo.api;
 
 /**
  * Created by Xie.Zhou on 2016/12/30.

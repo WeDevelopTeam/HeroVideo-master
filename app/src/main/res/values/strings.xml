@@ -18,6 +18,13 @@
     <string name="test_level">Lv9</string>
     <string name="members">正式会员</string>
 
+    <string name="section_recommend">推荐</string>
+    <string name="section_live">直播</string>
+    <string name="section_focus">关注</string>
+    <string name="section_more">分区</string>
+    <string name="section_bangumi">番剧</string>
+    <string name="section_discover">发现</string>
+
     <!--主题选择-->
     <string name="theme_pick">主题选择</string>
 
@@ -32,5 +39,19 @@
     <string name="item_theme">主题选择</string>
     <string name="item_app">应用推荐</string>
     <string name="item_vip">我的大会员</string>
+
+    <!--MediaPlayer-->
+    <string name="video_init">初始化播放器…</string>
+    <string name="video_loading">加载中…</string>
+    <string name="video_error_title">Cannot play video</string>
+    <string name="video_error_text_invalid_progressive_playback">Sorry, this video is not valid for streaming tothis device.</string>
+    <string name="video_error_text_unknown">Sorry, this video cannot be played.</string>
+    <string name="video_error_button">OK</string>
+    <string name="danmaku_switch">弹幕开</string>
+
+    <string name="quality_medium">清晰</string>
+    <string name="quality_smooth">流畅</string>
+    <string name="quality_super">超清</string>
+    <string name="lock">锁屏</string>
 
 </resources>

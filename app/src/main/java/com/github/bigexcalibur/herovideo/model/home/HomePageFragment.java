@@ -13,6 +13,7 @@ import android.view.MenuItem;
 
 import com.flyco.tablayout.SlidingTabLayout;
 import com.github.bigexcalibur.herovideo.R;
+import com.github.bigexcalibur.herovideo.adapter.pager.HomePagerAdapter;
 import com.github.bigexcalibur.herovideo.base.RxLazyFragment;
 import com.github.bigexcalibur.herovideo.model.common.MainActivity;
 import com.github.bigexcalibur.herovideo.ui.widget.CircleImageView;
@@ -108,13 +109,13 @@ public class HomePageFragment extends RxLazyFragment
 
     private void initViewPager()
     {
-//
-//        HomePagerAdapter mHomeAdapter = new HomePagerAdapter(getChildFragmentManager(),
-//                getApplicationContext());
-//        mViewPager.setOffscreenPageLimit(5);
-//        mViewPager.setAdapter(mHomeAdapter);
-//        mSlidingTab.setViewPager(mViewPager);
-//        mViewPager.setCurrentItem(1);
+
+        HomePagerAdapter mHomeAdapter = new HomePagerAdapter(getChildFragmentManager(),
+                getApplicationContext());
+        mViewPager.setOffscreenPageLimit(5);
+        mViewPager.setAdapter(mHomeAdapter);
+        mSlidingTab.setViewPager(mViewPager);
+        mViewPager.setCurrentItem(1);
     }
 
 
