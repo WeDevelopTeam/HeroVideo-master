@@ -1,4 +1,4 @@
-package bigexcalibur.github.com.herovideo.adapter;
+package com.github.bigexcalibur.herovideo.adapter;
 
 /**
  * Created by Xie.Zhou on 2016/12/30.

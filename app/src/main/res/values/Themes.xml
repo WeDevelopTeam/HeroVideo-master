@@ -19,4 +19,8 @@
         <item name="android:windowMinWidthMajor">90%</item>
         <item name="android:maxWidth">1080px</item>
     </style>
+
+    <style name="AppTheme.FullScreen" parent="AppTheme.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>
