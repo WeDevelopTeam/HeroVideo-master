@@ -1,4 +1,4 @@
-package com.github.bigexcalibur.herovideo.model.home;
+package com.github.bigexcalibur.herovideo.mvp.test.ui;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
 
-import com.github.bigexcalibur.herovideo.base.HeroVideoApp;
+import com.github.bigexcalibur.herovideo.mvp.common.application.HeroVideoApp;
 
 /**
  * Toast工具类
