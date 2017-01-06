@@ -1,4 +1,4 @@
-package com.github.bigexcalibur.herovideo.base;
+package com.github.bigexcalibur.herovideo.mvp.common.application;
 
 import android.app.Application;
 import android.content.Context;

@@ -11,9 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
 
-        android:name=".base.HeroVideoApp">
+        android:name=".mvp.common.application.HeroVideoApp">
 
-        <activity android:name=".model.common.MainActivity"
+        <activity android:name=".mvp.home.ui.MainActivity"
                   android:theme="@style/AppTheme.NoActionBar"
                   android:screenOrientation="portrait">
             <intent-filter>
@@ -24,7 +24,7 @@
 
         </activity>
 
-        <activity android:name=".model.common.TestPlayActivity"
+        <activity android:name=".mvp.test.ui.TestPlayActivity"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:launchMode="singleTop"
                   android:screenOrientation="landscape"

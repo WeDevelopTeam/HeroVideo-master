@@ -9,9 +9,18 @@
         android:layout_height="match_parent">
 
 
-        <android.support.design.widget.AppBarLayout
+        <com.bilibili.magicasakura.widgets.TintAppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+
+            <com.github.bigexcalibur.herovideo.ui.view.NoScrollViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
 
             <com.bilibili.magicasakura.widgets.TintToolbar
                 android:id="@+id/toolbar"
@@ -69,22 +78,16 @@
                 android:layout_height="@dimen/tab_layout_default_height"
                 android:paddingLeft="@dimen/default_general_margin"
                 android:paddingRight="@dimen/default_general_margin"
-                android:background="@drawable/normal_bg_selector"
+                android:background="@android:color/transparent"
                 app:tl_indicator_corner_radius="@dimen/tab_indicator_corner_tiny_radius"
                 app:tl_indicator_height="@dimen/tab_indicator_small_height"
                 app:tl_indicator_width="@dimen/tab_indicator_long_width"
                 app:tl_tab_space_equal="true" />
 
 
-        </android.support.design.widget.AppBarLayout>
+        </com.bilibili.magicasakura.widgets.TintAppBarLayout>
 
 
-        <com.github.bigexcalibur.herovideo.ui.view.NoScrollViewPager
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:overScrollMode="never"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 
     </android.support.design.widget.CoordinatorLayout>

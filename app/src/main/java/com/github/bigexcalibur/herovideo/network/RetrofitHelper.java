@@ -1,7 +1,7 @@
 package com.github.bigexcalibur.herovideo.network;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
-import com.github.bigexcalibur.herovideo.base.HeroVideoApp;
+import com.github.bigexcalibur.herovideo.mvp.common.application.HeroVideoApp;
 import com.github.bigexcalibur.herovideo.util.CommonUtil;
 
 import java.io.File;

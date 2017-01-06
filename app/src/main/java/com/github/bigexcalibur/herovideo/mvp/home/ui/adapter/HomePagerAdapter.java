@@ -1,4 +1,4 @@
-package com.github.bigexcalibur.herovideo.adapter.pager;
+package com.github.bigexcalibur.herovideo.mvp.home.ui.adapter;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.github.bigexcalibur.herovideo.R;
-import com.github.bigexcalibur.herovideo.model.home.TestFragment;
+import com.github.bigexcalibur.herovideo.mvp.test.ui.TestFragment;
 
 
 /**

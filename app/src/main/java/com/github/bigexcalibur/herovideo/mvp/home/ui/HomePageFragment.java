@@ -1,4 +1,4 @@
-package com.github.bigexcalibur.herovideo.model.home;
+package com.github.bigexcalibur.herovideo.mvp.home.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,9 +13,8 @@ import android.view.MenuItem;
 
 import com.flyco.tablayout.SlidingTabLayout;
 import com.github.bigexcalibur.herovideo.R;
-import com.github.bigexcalibur.herovideo.adapter.pager.HomePagerAdapter;
-import com.github.bigexcalibur.herovideo.base.RxLazyFragment;
-import com.github.bigexcalibur.herovideo.model.common.MainActivity;
+import com.github.bigexcalibur.herovideo.mvp.home.ui.adapter.HomePagerAdapter;
+import com.github.bigexcalibur.herovideo.mvp.common.ui.RxLazyFragment;
 import com.github.bigexcalibur.herovideo.ui.widget.CircleImageView;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 

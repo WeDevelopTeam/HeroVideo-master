@@ -1,4 +1,4 @@
-package com.github.bigexcalibur.herovideo.model.common;
+package com.github.bigexcalibur.herovideo.mvp.test.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

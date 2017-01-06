@@ -1,4 +1,4 @@
-package com.github.bigexcalibur.herovideo.model.common;
+package com.github.bigexcalibur.herovideo.mvp.home.ui;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,8 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.bigexcalibur.herovideo.R;
-import com.github.bigexcalibur.herovideo.base.RxBaseActivity;
-import com.github.bigexcalibur.herovideo.model.home.HomePageFragment;
+import com.github.bigexcalibur.herovideo.mvp.common.ui.RxBaseActivity;
 import com.github.bigexcalibur.herovideo.ui.widget.CircleImageView;
 import com.github.bigexcalibur.herovideo.ui.widget.ThemePickDialog;
 import com.github.bigexcalibur.herovideo.util.ConstantUtil;

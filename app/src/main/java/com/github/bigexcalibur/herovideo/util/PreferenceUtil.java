@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.preference.PreferenceManager;
 
-import com.github.bigexcalibur.herovideo.base.HeroVideoApp;
+import com.github.bigexcalibur.herovideo.mvp.common.application.HeroVideoApp;
 
 /**
  * SP缓存工具类
