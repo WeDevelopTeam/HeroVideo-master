@@ -9,10 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.github.bigexcalibur.herovideo.rxbus.RxBus;
+import com.github.bigexcalibur.herovideo.rxbus.event.ThemeChangeEvent;
 import com.trello.rxlifecycle.components.support.RxFragment;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import rx.Subscription;
 
 /**
  * Fragment基类
@@ -32,9 +35,9 @@ public abstract class RxLazyFragment extends RxFragment
 
     private Unbinder bind;
 
-    public abstract
-    @LayoutRes
-    int getLayoutResId();
+    public abstract @LayoutRes int getLayoutResId();
+
+    private Subscription mThemeChangeSubscription;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle state)
@@ -48,13 +51,22 @@ public abstract class RxLazyFragment extends RxFragment
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState)
     {
-
         super.onViewCreated(view, savedInstanceState);
         bind = ButterKnife.bind(this, view);
+        initThemeChangeObserver();
         finishCreateView(savedInstanceState);
+        onThemeChange(new ThemeChangeEvent(ThemeChangeEvent.INIT_CHANGE));
+    }
+
+    private void initThemeChangeObserver(){
+        mThemeChangeSubscription = RxBus.getInstance().toObserverable(ThemeChangeEvent.class).subscribe(this::onThemeChange);
     }
 
     public abstract void finishCreateView(Bundle state);
+
+    public void onThemeChange(ThemeChangeEvent themeChangeEvent){
+
+    }
 
     @Override
     public void onResume()
@@ -66,9 +78,11 @@ public abstract class RxLazyFragment extends RxFragment
     @Override
     public void onDestroyView()
     {
-
         super.onDestroyView();
         bind.unbind();
+        if(!mThemeChangeSubscription.isUnsubscribed()) {
+            mThemeChangeSubscription.unsubscribe();
+        }
     }
 
     @Override
@@ -130,7 +144,6 @@ public abstract class RxLazyFragment extends RxFragment
 
     protected void onVisible()
     {
-
         lazyLoad();
     }
 

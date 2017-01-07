@@ -9,18 +9,9 @@
         android:layout_height="match_parent">
 
 
-        <com.bilibili.magicasakura.widgets.TintAppBarLayout
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-
-            <com.github.bigexcalibur.herovideo.ui.view.NoScrollViewPager
-                android:id="@+id/view_pager"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:overScrollMode="never"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
 
             <com.bilibili.magicasakura.widgets.TintToolbar
                 android:id="@+id/toolbar"
@@ -33,14 +24,12 @@
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-
                 <LinearLayout
                     android:id="@+id/navigation_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
-
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -78,16 +67,22 @@
                 android:layout_height="@dimen/tab_layout_default_height"
                 android:paddingLeft="@dimen/default_general_margin"
                 android:paddingRight="@dimen/default_general_margin"
-                android:background="@android:color/transparent"
+                android:background="@color/theme_color_primary"
                 app:tl_indicator_corner_radius="@dimen/tab_indicator_corner_tiny_radius"
                 app:tl_indicator_height="@dimen/tab_indicator_small_height"
                 app:tl_indicator_width="@dimen/tab_indicator_long_width"
                 app:tl_tab_space_equal="true" />
 
 
-        </com.bilibili.magicasakura.widgets.TintAppBarLayout>
+        </android.support.design.widget.AppBarLayout>
 
 
+        <com.github.bigexcalibur.herovideo.ui.view.NoScrollViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 
     </android.support.design.widget.CoordinatorLayout>

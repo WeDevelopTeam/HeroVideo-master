@@ -20,6 +20,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_test"/>
+    <Button
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:id="@+id/btn_test2"
+        android:text="2"
+        android:background="@color/theme_color_primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_test1"/>
+
 
 
 </RelativeLayout>
