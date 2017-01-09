@@ -11,7 +11,10 @@ import android.view.WindowManager;
 
 import com.bilibili.magicasakura.utils.ThemeUtils;
 import com.github.bigexcalibur.herovideo.R;
+import com.github.bigexcalibur.herovideo.rxbus.RxBus;
+import com.github.bigexcalibur.herovideo.rxbus.event.ThemeChangeEvent;
 import com.github.bigexcalibur.herovideo.ui.widget.ThemePickDialog;
+import com.github.bigexcalibur.herovideo.util.LogUtil;
 import com.github.bigexcalibur.herovideo.util.ThemeHelper;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
@@ -37,6 +40,8 @@ public abstract class RxBaseActivity extends RxAppCompatActivity implements Them
         initViews(savedInstanceState);
         //初始化ToolBar
         initToolbar();
+        // 发送MagicaSacura初始化的事件
+        RxBus.getInstance().post(new ThemeChangeEvent(ThemeChangeEvent.INIT_CHANGE));
     }
 
     public abstract int getLayoutId();
@@ -64,6 +69,13 @@ public abstract class RxBaseActivity extends RxAppCompatActivity implements Them
     }
 
     // MagicSakura 主题切换初始化
+    public void onRefreshGlobal(){
+
+    }
+
+    public void onRefreshSpecificView(View view){
+
+    }
 
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
@@ -83,6 +95,7 @@ public abstract class RxBaseActivity extends RxAppCompatActivity implements Them
 
     @Override
     public void onConfirm(int currentTheme) {
+        LogUtil.d("onConfirm = " +currentTheme );
 
         if (ThemeHelper.getTheme(RxBaseActivity.this) != currentTheme) {
             ThemeHelper.setTheme(RxBaseActivity.this, currentTheme);
@@ -96,11 +109,19 @@ public abstract class RxBaseActivity extends RxAppCompatActivity implements Them
                                 setTaskDescription(taskDescription);
                                 getWindow().setStatusBarColor(ThemeUtils.getColorById(context, R.color.theme_color_primary_dark));
                             }
+
+                            // 方便子类重写
+                            onRefreshGlobal();
+                            // post主题切换的消息,方便Fragment等完成主题切换
+                            RxBus.getInstance().post(new ThemeChangeEvent(ThemeChangeEvent.GLOBLE_CHANGE));
                         }
 
                         @Override
                         public void refreshSpecificView(View view) {
                             //TODO: will do this for each traversal
+                            // post主题切换的消息
+                            onRefreshSpecificView(view);
+                            RxBus.getInstance().post(new ThemeChangeEvent(ThemeChangeEvent.SPECIFIC_CHANGE,view));
                         }
                     }
             );

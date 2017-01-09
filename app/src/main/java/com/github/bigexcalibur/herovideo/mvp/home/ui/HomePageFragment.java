@@ -11,10 +11,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.bilibili.magicasakura.utils.ThemeUtils;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.github.bigexcalibur.herovideo.R;
-import com.github.bigexcalibur.herovideo.mvp.home.ui.adapter.HomePagerAdapter;
 import com.github.bigexcalibur.herovideo.mvp.common.ui.RxLazyFragment;
+import com.github.bigexcalibur.herovideo.mvp.home.ui.adapter.HomePagerAdapter;
+import com.github.bigexcalibur.herovideo.rxbus.event.ThemeChangeEvent;
 import com.github.bigexcalibur.herovideo.ui.widget.CircleImageView;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
@@ -46,7 +48,6 @@ public class HomePageFragment extends RxLazyFragment
 
     public static HomePageFragment newInstance()
     {
-
         return new HomePageFragment();
     }
 
@@ -54,24 +55,20 @@ public class HomePageFragment extends RxLazyFragment
     @Override
     public int getLayoutResId()
     {
-
         return R.layout.fragment_home_pager;
     }
 
     @Override
     public void finishCreateView(Bundle state)
     {
-
         setHasOptionsMenu(true);
         initToolBar();
         initSearchView();
         initViewPager();
     }
 
-
     private void initToolBar()
     {
-
         mToolbar.setTitle("");
         ((MainActivity) getActivity()).setSupportActionBar(mToolbar);
         mCircleImageView.setImageResource(R.drawable.ic_launcher);
@@ -91,7 +88,6 @@ public class HomePageFragment extends RxLazyFragment
             @Override
             public boolean onQueryTextSubmit(String query)
             {
-
 //                TotalStationSearchActivity.launch(getActivity(), query);
                 return false;
             }
@@ -117,6 +113,13 @@ public class HomePageFragment extends RxLazyFragment
         mViewPager.setCurrentItem(1);
     }
 
+    @Override
+    public void onThemeChange(ThemeChangeEvent themeChangeEvent) {
+        super.onThemeChange(themeChangeEvent);
+        if (themeChangeEvent.eventType == ThemeChangeEvent.GLOBLE_CHANGE||themeChangeEvent.eventType == ThemeChangeEvent.INIT_CHANGE){
+            mSlidingTab.setBackgroundColor(ThemeUtils.getColorById(getActivity(),R.color.theme_color_primary));
+        }
+    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
@@ -195,4 +198,6 @@ public class HomePageFragment extends RxLazyFragment
 
         mSearchView.closeSearch();
     }
+
+
 }
