@@ -116,8 +116,11 @@ public class HomePageFragment extends RxLazyFragment
     @Override
     public void onThemeChange(ThemeChangeEvent themeChangeEvent) {
         super.onThemeChange(themeChangeEvent);
-        if (themeChangeEvent.eventType == ThemeChangeEvent.GLOBLE_CHANGE||themeChangeEvent.eventType == ThemeChangeEvent.INIT_CHANGE){
-            mSlidingTab.setBackgroundColor(ThemeUtils.getColorById(getActivity(),R.color.theme_color_primary));
+        switch (themeChangeEvent.eventType){
+            case ThemeChangeEvent.GLOBLE_CHANGE:
+            case ThemeChangeEvent.INIT_CHANGE:
+                mSlidingTab.setBackgroundColor(ThemeUtils.getColorById(getActivity(),R.color.theme_color_primary));
+                break;
         }
     }
 

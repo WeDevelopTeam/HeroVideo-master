@@ -51,8 +51,12 @@ public class TestFragment extends RxLazyFragment {
     @Override
     public void onThemeChange(ThemeChangeEvent themeChangeEvent) {
         super.onThemeChange(themeChangeEvent);
-        if (themeChangeEvent.eventType == ThemeChangeEvent.GLOBLE_CHANGE||themeChangeEvent.eventType == ThemeChangeEvent.INIT_CHANGE){
-            mBtnTest2.setBackgroundColor(ThemeUtils.getColorById(getActivity(),R.color.theme_color_primary));
+        switch (themeChangeEvent.eventType){
+            case ThemeChangeEvent.GLOBLE_CHANGE:
+            case ThemeChangeEvent.INIT_CHANGE:
+                mBtnTest2.setBackgroundColor(ThemeUtils.getColorById(getActivity(),R.color.theme_color_primary));
+                break;
         }
+
     }
 }

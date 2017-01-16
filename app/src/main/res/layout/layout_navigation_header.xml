@@ -74,12 +74,12 @@
 
         <LinearLayout
             android:id="@+id/subtitle_layout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/user_avatar_view"
             android:layout_gravity="bottom"
             android:layout_marginStart="@dimen/default_general_margin"
-            android:background="?attr/selectableItemBackground"
+            android:layout_marginEnd="@dimen/default_general_margin"
             android:orientation="vertical"
             android:paddingTop="@dimen/default_tiny_padding">
 
