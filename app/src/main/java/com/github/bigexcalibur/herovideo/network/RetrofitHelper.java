@@ -2,6 +2,8 @@ package com.github.bigexcalibur.herovideo.network;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.github.bigexcalibur.herovideo.mvp.common.application.HeroVideoApp;
+import com.github.bigexcalibur.herovideo.network.api.BilibiliVideoService;
+import com.github.bigexcalibur.herovideo.network.auxiliary.ApiConstants;
 import com.github.bigexcalibur.herovideo.util.CommonUtil;
 
 import java.io.File;
@@ -15,6 +17,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by hcc on 16/8/4 21:18
@@ -30,6 +35,14 @@ public class RetrofitHelper
     static
     {
         initOkHttpClient();
+    }
+
+    public static OkHttpClient getOkHttpClient(){
+        return mOkHttpClient;
+    }
+
+    public static BilibiliVideoService getBilibiliVideo(){
+        return createApi(BilibiliVideoService.class, ApiConstants.API_BASE_URL);
     }
 
 //    public static LiveService getLiveAPI()
@@ -108,31 +121,31 @@ public class RetrofitHelper
 //    }
 //
 //
-//    /**
-//     * 根据传入的baseUrl，和api创建retrofit
-//     *
-//     * @param clazz
-//     * @param baseUrl
-//     * @param <T>
-//     * @return
-//     */
-//    private static <T> T createApi(Class<T> clazz, String baseUrl)
-//    {
-//
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl(baseUrl)
-//                .client(mOkHttpClient)
-//                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
-//
-//        return retrofit.create(clazz);
-//    }
-//
-//
-//    /**
-//     * 初始化OKHttpClient,设置缓存,设置超时时间,设置打印日志,设置UA拦截器
-//     */
+    /**
+     * 根据传入的baseUrl，和api创建retrofit
+     *
+     * @param clazz
+     * @param baseUrl
+     * @param <T>
+     * @return
+     */
+    private static <T> T createApi(Class<T> clazz, String baseUrl)
+    {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(baseUrl)
+                .client(mOkHttpClient)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        return retrofit.create(clazz);
+    }
+
+
+    /**
+     * 初始化OKHttpClient,设置缓存,设置超时时间,设置打印日志,设置UA拦截器
+     */
     private static void initOkHttpClient()
     {
 
