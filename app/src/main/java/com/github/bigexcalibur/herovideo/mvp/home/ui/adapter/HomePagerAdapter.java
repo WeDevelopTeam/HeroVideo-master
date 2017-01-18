@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.github.bigexcalibur.herovideo.R;
+import com.github.bigexcalibur.herovideo.mvp.test.ui.Test2Fragment;
 import com.github.bigexcalibur.herovideo.mvp.test.ui.TestFragment;
 
 
@@ -15,15 +16,13 @@ import com.github.bigexcalibur.herovideo.mvp.test.ui.TestFragment;
  * <p/>
  * 主界面Fragment模块Adapter
  */
-public class HomePagerAdapter extends FragmentPagerAdapter
-{
+public class HomePagerAdapter extends FragmentPagerAdapter {
 
     private final String[] TITLES;
 
     private Fragment[] fragments;
 
-    public HomePagerAdapter(FragmentManager fm, Context context)
-    {
+    public HomePagerAdapter(FragmentManager fm, Context context) {
 
         super(fm);
         TITLES = context.getResources().getStringArray(R.array.sections);
@@ -31,51 +30,46 @@ public class HomePagerAdapter extends FragmentPagerAdapter
     }
 
     @Override
-    public Fragment getItem(int position)
-    {
+    public Fragment getItem(int position) {
 
-        if (fragments[position] == null)
-        {
-            switch (position)
-            {
+        if (fragments[position] == null) {
+            switch (position) {
 
                 case 0:
-//                    fragments[position] = HomeLiveFragment.newIntance();
+                    fragments[position] = new TestFragment();
                     break;
                 case 1:
-//                    fragments[position] = HomeRecommendedFragment.newInstance();
+                    fragments[position] = new Test2Fragment();
                     break;
                 case 2:
-//                    fragments[position] = HomeBangumiFragment.newInstance();
+                    fragments[position] = new TestFragment();
                     break;
                 case 3:
-//                    fragments[position] = HomeRegionFragment.newInstance();
+                    fragments[position] = new TestFragment();
                     break;
                 case 4:
-//                    fragments[position] = HomeAttentionFragment.newIntance();
+                    fragments[position] = new TestFragment();
                     break;
                 case 5:
-//                    fragments[position] = HomeDiscoverFragment.newInstance();
+                    fragments[position] = new TestFragment();
                     break;
                 default:
                     break;
             }
         }
-        fragments[position] = new TestFragment();
+
 
         return fragments[position];
     }
 
     @Override
-    public int getCount()
-    {
+    public int getCount() {
 
         return TITLES.length;
     }
 
     @Override
-    public CharSequence getPageTitle(int position)
-    {
+    public CharSequence getPageTitle(int position) {
 
         return TITLES[position];
     }

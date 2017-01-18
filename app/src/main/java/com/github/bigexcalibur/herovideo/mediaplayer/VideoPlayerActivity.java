@@ -18,6 +18,7 @@ import com.github.bigexcalibur.herovideo.mvp.common.ui.RxBaseActivity;
 import com.github.bigexcalibur.herovideo.mediaplayer.callback.DanmukuSwitchListener;
 import com.github.bigexcalibur.herovideo.mediaplayer.callback.VideoBackListener;
 import com.github.bigexcalibur.herovideo.util.ConstantUtil;
+import com.github.bigexcalibur.herovideo.util.ToastUtil;
 
 import java.util.HashMap;
 
@@ -161,7 +162,8 @@ public class VideoPlayerActivity extends RxBaseActivity implements DanmukuSwitch
         Intent intent = getIntent();
         String url = intent.getStringExtra("url");
         if (TextUtils.isEmpty(url)){
-            url = "http://cdn.hotcast.cn/import%2F20161226%2Fuhd%2Fyzc20161223.mp4";
+            ToastUtil.showShort(this,"播放地址错误!");
+            finish();
         }
         mPlayerView.setVideoURI(Uri.parse(url));
         mPlayerView.setOnPreparedListener(mp -> {

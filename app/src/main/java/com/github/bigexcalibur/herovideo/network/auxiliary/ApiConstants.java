@@ -34,5 +34,5 @@ public class ApiConstants
 
     public static final String COMMON_UA_STR = "OhMyBiliBili Android Client/2.1 (100332338@qq.com)";
 
-    public static final String VIDEO_HEAD = "http://www.bilibili.com/video/av";
+    public static final String VIDEO_SEARCH_HEAD = "http://www.bilibili.com/video/av";
 }

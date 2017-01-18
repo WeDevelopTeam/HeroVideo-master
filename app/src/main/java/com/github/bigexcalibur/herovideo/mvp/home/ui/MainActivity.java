@@ -283,4 +283,14 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
             finish();
         }
     }
+
+    @Override
+    public void onGlobalThemeChange() {
+
+    }
+
+    @Override
+    public void onSpecificThemeChange(View view) {
+
+    }
 }

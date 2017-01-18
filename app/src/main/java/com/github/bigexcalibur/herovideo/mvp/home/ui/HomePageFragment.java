@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.bilibili.magicasakura.utils.ThemeUtils;
 import com.flyco.tablayout.SlidingTabLayout;
@@ -203,4 +204,48 @@ public class HomePageFragment extends RxLazyFragment
     }
 
 
+    @Override
+    public void onLazyLoad() {
+
+    }
+
+    @Override
+    public void onInvisible() {
+
+    }
+
+    @Override
+    public void loadData() {
+
+    }
+
+    @Override
+    public void FinishLoadData() {
+
+    }
+
+    @Override
+    public void onNodata() {
+
+    }
+
+    @Override
+    public void onNetDisConnected() {
+
+    }
+
+    @Override
+    public void onInitThemeChange() {
+
+    }
+
+    @Override
+    public void onGlobalThemeChange() {
+
+    }
+
+    @Override
+    public void onSpecificThemeChange(View view) {
+
+    }
 }

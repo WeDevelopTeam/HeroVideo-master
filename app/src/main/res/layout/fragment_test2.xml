@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <EditText
+        android:background="@color/white_30"
+        android:id="@+id/et_test"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:hint="请输入bilibili av号"
+        android:text="7931118"
+        android:paddingStart="5dp"
+        android:layout_below="@+id/btn_test1"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textSize="15sp"
+        />
+    <Button
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:id="@+id/btn_test2"
+        android:text="播放"
+        android:phoneNumber="true"
+        android:textColor="@color/white"
+        android:background="@color/theme_color_primary"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_toRightOf="@+id/et_test"
+        android:layout_alignTop="@+id/et_test"/>
+</RelativeLayout>

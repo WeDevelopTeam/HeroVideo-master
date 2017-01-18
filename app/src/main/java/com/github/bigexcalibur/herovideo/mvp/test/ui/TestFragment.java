@@ -103,7 +103,7 @@ public class TestFragment extends RxLazyFragment {
 
 
     private void startBilibiliVideo(Editable av_num) {
-        String url = ApiConstants.VIDEO_HEAD+av_num;
+        String url = ApiConstants.VIDEO_SEARCH_HEAD +av_num;
         Request request = new Request.Builder().url(url).build();
         RetrofitHelper.getOkHttpClient().newCall(request).enqueue(new Callback() {
             @Override
@@ -144,8 +144,6 @@ public class TestFragment extends RxLazyFragment {
                     @Override
                     public void onFailure(Call call, IOException e) {
 
-
-
                     }
 
                     @Override
@@ -170,7 +168,6 @@ public class TestFragment extends RxLazyFragment {
                         Intent intent = new Intent(getActivity(),VideoPlayerActivity.class);
                         intent.putExtra("url",split[0]);
                         getActivity().startActivity(intent);
-
 
                     }
                 });

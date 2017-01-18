@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.github.bigexcalibur.herovideo.mvp.common.view.IRxBaseFragmentView;
 import com.github.bigexcalibur.herovideo.rxbus.RxBus;
 import com.github.bigexcalibur.herovideo.rxbus.event.ThemeChangeEvent;
 import com.trello.rxlifecycle.components.support.RxFragment;
@@ -20,7 +21,7 @@ import rx.Subscription;
 /**
  * Fragment基类
  */
-public abstract class RxLazyFragment extends RxFragment
+public abstract class RxLazyFragment extends RxFragment implements IRxBaseFragmentView
 {
 
     private View parentView;
@@ -144,24 +145,9 @@ public abstract class RxLazyFragment extends RxFragment
 
     protected void onVisible()
     {
-        lazyLoad();
+        onLazyLoad();
     }
 
-    protected void lazyLoad() {}
-
-    protected void onInvisible() {}
-
-    protected void loadData() {}
-
-    protected void showProgressBar() {}
-
-    protected void hideProgressBar() {}
-
-    protected void initRecyclerView() {}
-
-    protected void initRefreshLayout() {}
-
-    protected void finishTask() {}
 
     @SuppressWarnings("unchecked")
     public <T extends View> T $(int id)
