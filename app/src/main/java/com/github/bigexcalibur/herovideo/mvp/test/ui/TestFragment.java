@@ -114,27 +114,66 @@ public class TestFragment extends RxLazyFragment {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
 //                LogUtil.d("test", response.body().string());
-                String html = response.body().string();
+                String content = response.body().string();
 
                 //Pattern pattern = Pattern.compile("*cid=")
                 // 创建 Pattern 对象
                 Pattern r = Pattern.compile("cid=([^&]+)");
 
                 // 现在创建 matcher 对象
-                Matcher m = r.matcher(html);
+                Matcher m = r.matcher(content);
                 String cid = "";
                 if (m.find( )) {
-                    LogUtil.d("test"," m.group(0) = " +m.group(0));
-                    LogUtil.d("test"," m.group(1) = " +m.group(1));
+//                    LogUtil.d("test"," m.group(0) = " +m.group(0));
+//                    LogUtil.d("test"," m.group(1) = " +m.group(1));
                     cid = m.group(1);
                 } else {
                     ToastUtil.ShortToast("未找到资源");
                     return;
                 }
+                final String  SECRETKEY_MINILOADER = "1c15888dc316e05a15fdd0a02ed6584f";
 
-                String sign = Md5.strToMd5Low32("cid="+cid+"&from=miniplay&player=1"+"1c15888dc316e05a15fdd0a02ed6584f");
+                String sign = Md5.strToMd5Low32("cid="+cid+"&from=miniplay&player=1"+SECRETKEY_MINILOADER);
+                LogUtil.d("test",sign);
+
+                String url2 = "http://interface.bilibili.com/playurl?&cid=" + cid + "&from=miniplay&player=1" + "&sign=" + sign;
 
 
+                Request request2 = new Request.Builder().url(url2).build();
+                RetrofitHelper.getOkHttpClient().newCall(request2).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+
+
+
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        String content = response.body().string();
+                        LogUtil.d("html",content);
+                        // 创建 Pattern 对象
+                        Pattern r = Pattern.compile("http([^><]+)");
+                        // 现在创建 matcher 对象
+                        Matcher m = r.matcher(content);
+                        String str = "";
+                        if (m.find( )) {
+                            LogUtil.d("test"," m.group(0) = " +m.group(0));
+                            LogUtil.d("test"," m.group(1) = " +m.group(1));
+                            str = m.group(0);
+                        } else {
+
+                            ToastUtil.ShortToast("未找到资源");
+                            return;
+                        }
+                        String[] split = str.split("]]");
+                        Intent intent = new Intent(getActivity(),VideoPlayerActivity.class);
+                        intent.putExtra("url",split[0]);
+                        getActivity().startActivity(intent);
+
+
+                    }
+                });
             }
         });
 

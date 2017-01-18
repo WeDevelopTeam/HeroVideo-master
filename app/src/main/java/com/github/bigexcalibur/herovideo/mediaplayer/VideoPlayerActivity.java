@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -157,8 +158,12 @@ public class VideoPlayerActivity extends RxBaseActivity implements DanmukuSwitch
     @Override
     public void loadData()
     {
-
-        mPlayerView.setVideoURI(Uri.parse("http://cdn.hotcast.cn/import%2F20161226%2Fuhd%2Fyzc20161223.mp4"));
+        Intent intent = getIntent();
+        String url = intent.getStringExtra("url");
+        if (TextUtils.isEmpty(url)){
+            url = "http://cdn.hotcast.cn/import%2F20161226%2Fuhd%2Fyzc20161223.mp4";
+        }
+        mPlayerView.setVideoURI(Uri.parse(url));
         mPlayerView.setOnPreparedListener(mp -> {
                         mLoadingAnim.stop();
                         startText = startText + "【完成】\n视频缓冲中...";
