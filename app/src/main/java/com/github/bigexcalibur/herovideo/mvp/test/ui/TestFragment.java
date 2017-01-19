@@ -33,6 +33,8 @@ import okhttp3.Callback;
 import okhttp3.Request;
 import okhttp3.Response;
 
+import static com.github.bigexcalibur.herovideo.network.auxiliary.ApiConstants.SECRETKEY_MINILOADER;
+
 /**
  * Created by Xie.Zhou on 2017/1/4.
  */
@@ -103,7 +105,7 @@ public class TestFragment extends RxLazyFragment {
 
 
     private void startBilibiliVideo(Editable av_num) {
-        String url = ApiConstants.VIDEO_SEARCH_HEAD +av_num;
+        String url = ApiConstants.VIDEO_SEARCH_HEAD +"av" +av_num;
         Request request = new Request.Builder().url(url).build();
         RetrofitHelper.getOkHttpClient().newCall(request).enqueue(new Callback() {
             @Override
@@ -116,7 +118,6 @@ public class TestFragment extends RxLazyFragment {
 //                LogUtil.d("test", response.body().string());
                 String content = response.body().string();
 
-                //Pattern pattern = Pattern.compile("*cid=")
                 // 创建 Pattern 对象
                 Pattern r = Pattern.compile("cid=([^&]+)");
 
@@ -124,21 +125,17 @@ public class TestFragment extends RxLazyFragment {
                 Matcher m = r.matcher(content);
                 String cid = "";
                 if (m.find( )) {
-//                    LogUtil.d("test"," m.group(0) = " +m.group(0));
-//                    LogUtil.d("test"," m.group(1) = " +m.group(1));
                     cid = m.group(1);
                 } else {
                     ToastUtil.ShortToast("未找到资源");
                     return;
                 }
-                final String  SECRETKEY_MINILOADER = "1c15888dc316e05a15fdd0a02ed6584f";
 
                 String sign = Md5.strToMd5Low32("cid="+cid+"&from=miniplay&player=1"+SECRETKEY_MINILOADER);
-                LogUtil.d("test",sign);
+                LogUtil.test(sign);
 
-                String url2 = "http://interface.bilibili.com/playurl?&cid=" + cid + "&from=miniplay&player=1" + "&sign=" + sign;
-
-
+                String url2 = "http://interface.bilibili.com/playurl?cid=" + cid + "&from=miniplay&player=1" + "&sign=" + sign;
+                LogUtil.test(url2);
                 Request request2 = new Request.Builder().url(url2).build();
                 RetrofitHelper.getOkHttpClient().newCall(request2).enqueue(new Callback() {
                     @Override
@@ -160,7 +157,6 @@ public class TestFragment extends RxLazyFragment {
                             LogUtil.d("test"," m.group(1) = " +m.group(1));
                             str = m.group(0);
                         } else {
-
                             ToastUtil.ShortToast("未找到资源");
                             return;
                         }
@@ -168,7 +164,6 @@ public class TestFragment extends RxLazyFragment {
                         Intent intent = new Intent(getActivity(),VideoPlayerActivity.class);
                         intent.putExtra("url",split[0]);
                         getActivity().startActivity(intent);
-
                     }
                 });
             }

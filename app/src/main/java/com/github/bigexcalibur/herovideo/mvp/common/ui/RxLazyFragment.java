@@ -155,4 +155,49 @@ public abstract class RxLazyFragment extends RxFragment implements IRxBaseFragme
 
         return (T) parentView.findViewById(id);
     }
+
+    @Override
+    public void onSpecificThemeChange(View view) {
+
+    }
+
+    @Override
+    public void loadData() {
+
+    }
+
+    @Override
+    public void FinishLoadData() {
+
+    }
+
+    @Override
+    public void onNodata() {
+
+    }
+
+    @Override
+    public void onNetDisConnected() {
+
+    }
+
+    @Override
+    public void onInitThemeChange() {
+
+    }
+
+    @Override
+    public void onGlobalThemeChange() {
+
+    }
+
+    @Override
+    public void onLazyLoad() {
+
+    }
+
+    @Override
+    public void onInvisible() {
+
+    }
 }

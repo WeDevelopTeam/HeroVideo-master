@@ -14,9 +14,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.github.bigexcalibur.herovideo.R;
-import com.github.bigexcalibur.herovideo.mvp.common.ui.RxBaseActivity;
 import com.github.bigexcalibur.herovideo.mediaplayer.callback.DanmukuSwitchListener;
 import com.github.bigexcalibur.herovideo.mediaplayer.callback.VideoBackListener;
+import com.github.bigexcalibur.herovideo.mvp.common.ui.RxBaseActivity;
 import com.github.bigexcalibur.herovideo.util.ConstantUtil;
 import com.github.bigexcalibur.herovideo.util.ToastUtil;
 

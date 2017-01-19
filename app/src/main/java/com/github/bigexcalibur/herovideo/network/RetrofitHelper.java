@@ -3,6 +3,7 @@ package com.github.bigexcalibur.herovideo.network;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.github.bigexcalibur.herovideo.mvp.common.application.HeroVideoApp;
 import com.github.bigexcalibur.herovideo.network.api.BiliAVSearchService;
+import com.github.bigexcalibur.herovideo.network.api.BiliAVVideoService;
 import com.github.bigexcalibur.herovideo.network.api.BiliAppService;
 import com.github.bigexcalibur.herovideo.network.auxiliary.ApiConstants;
 import com.github.bigexcalibur.herovideo.util.CommonUtil;
@@ -42,9 +43,20 @@ public class RetrofitHelper
         return mOkHttpClient;
     }
 
-    public static BiliAVSearchService getBilibiliVideo(){
-        return createApi(BiliAVSearchService.class, ApiConstants.VIDEO_SEARCH_HEAD);
+    public static BiliAVSearchService getBiliAVSearchAPI()
+    {
+        return createApi(BiliAVSearchService.class, ApiConstants.RANK_BASE_URL);
     }
+
+    public static BiliAVVideoService getBiliAVVideoAPI()
+    {
+        return createApi(BiliAVVideoService.class,ApiConstants.VIDEO_INTERFACE_URL);
+    }
+//
+//    public static BiliAVVideoService getBilibiliVideo()
+//    {
+//        return createApi(BiliAVVideoService.class, ApiConstants.RANK_BASE_URL);
+//    }
 
 //    public static LiveService getLiveAPI()
 //    {
@@ -55,7 +67,6 @@ public class RetrofitHelper
 //
     public static BiliAppService getBiliAppAPI()
     {
-
         return createApi(BiliAppService.class, ApiConstants.APP_BASE_URL);
     }
 

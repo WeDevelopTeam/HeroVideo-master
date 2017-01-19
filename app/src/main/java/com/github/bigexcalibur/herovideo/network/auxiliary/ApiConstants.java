@@ -7,8 +7,7 @@ package com.github.bigexcalibur.herovideo.network.auxiliary;
  * API常量类
  */
 
-public class ApiConstants
-{
+public class ApiConstants {
 
     public static final String BILI_GO_BASE_URL = "http://bilibili-service.daoapp.io/";
 
@@ -34,5 +33,11 @@ public class ApiConstants
 
     public static final String COMMON_UA_STR = "OhMyBiliBili Android Client/2.1 (100332338@qq.com)";
 
-    public static final String VIDEO_SEARCH_HEAD = "http://www.bilibili.com/video/av";
+    public static final String VIDEO_SEARCH_HEAD = "http://www.bilibili.com/video/";
+
+    public static final String VIDEO_INTERFACE_URL ="http://interface.bilibili.com/";
+    /**
+     * Key
+     */
+    public static final String SECRETKEY_MINILOADER = "1c15888dc316e05a15fdd0a02ed6584f";
 }

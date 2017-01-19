@@ -265,7 +265,6 @@ public class VideoPlayerView extends SurfaceView implements MediaPlayerListener
         @Override
         public boolean onInfo(IMediaPlayer mp, int what, int extra)
         {
-
             DebugLog.dfmt(TAG, "onInfo: (%d, %d)", what, extra);
             if (mOnInfoListener != null)
             {

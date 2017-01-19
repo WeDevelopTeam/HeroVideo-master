@@ -27,7 +27,7 @@ public class RecommendFragment extends RxLazyFragment {
     }
 
     @Override
-    protected void loadData() {
-
+    public void loadData() {
+        super.loadData();
     }
 }

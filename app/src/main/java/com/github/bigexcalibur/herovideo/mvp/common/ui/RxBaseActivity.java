@@ -20,7 +20,6 @@ import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import rx.Subscription;
 
 /**
  * Created by Xie.Zhou on 2017/1/3.
@@ -30,7 +29,6 @@ public abstract class RxBaseActivity extends RxAppCompatActivity implements Them
 
     private Unbinder bind;
     private RxBaseViewPresenter mRxBaseViewPresenter;
-    private Subscription mThemeChangeSubscription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +53,7 @@ public abstract class RxBaseActivity extends RxAppCompatActivity implements Them
         mRxBaseViewPresenter.onInitThemeChange();
     }
 
-    public void initPresenter(){
+    protected void initPresenter(){
         mRxBaseViewPresenter = new RxBaseViewPresenter(this);
     }
 
@@ -143,5 +141,15 @@ public abstract class RxBaseActivity extends RxAppCompatActivity implements Them
         super.onDestroy();
         bind.unbind();
         mRxBaseViewPresenter.onDestroyView();
+    }
+
+    @Override
+    public void onGlobalThemeChange() {
+
+    }
+
+    @Override
+    public void onSpecificThemeChange(View view) {
+
     }
 }

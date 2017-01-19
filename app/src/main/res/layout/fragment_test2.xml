@@ -11,7 +11,7 @@
         android:layout_height="30dp"
         android:gravity="center_vertical"
         android:hint="请输入bilibili av号"
-        android:text="7931118"
+        android:text="1852476"
         android:paddingStart="5dp"
         android:layout_below="@+id/btn_test1"
         android:layout_marginStart="16dp"
@@ -29,4 +29,12 @@
         android:layout_height="30dp"
         android:layout_toRightOf="@+id/et_test"
         android:layout_alignTop="@+id/et_test"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listview"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/et_test"
+        />
 </RelativeLayout>
