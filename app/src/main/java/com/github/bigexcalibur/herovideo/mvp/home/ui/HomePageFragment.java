@@ -144,10 +144,6 @@ public class HomePageFragment extends RxLazyFragment
         int id = item.getItemId();
         switch (id)
         {
-            case R.id.id_action_game:
-                //游戏中心
-//                startActivity(new Intent(getActivity(), GameCentreActivity.class));
-                break;
 
             case R.id.id_action_download:
                 //离线缓存

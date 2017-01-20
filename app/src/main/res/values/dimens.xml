@@ -53,18 +53,12 @@
     <dimen name="tab_layout_small_height">40dp</dimen>
     <dimen name="tab_layout_default_height">48dp</dimen>
 
-
     <!--circle head portrait size-->
     <dimen name="circle_default_size">120dp</dimen>
     <dimen name="circle_default_width">1dp</dimen>
     <dimen name="circle_margin_top">20dp</dimen>
     <dimen name="text_margin_top">40dp</dimen>
     <dimen name="circle_user_small_size">34dp</dimen>
-
-    <!-- video player -->
-    <dimen name="mediacontroller_buttons_top_margin">2dp</dimen>
-    <dimen name="mediacontroller_bottom_layout_center_margin">12dp</dimen>
-    <dimen name="mediacontroller_bottom_layout_danmaku_padding">3dp</dimen>
 
     <!-- CircleProgressView -->
     <dimen name="circle_progress_view_default_size">56dp</dimen>

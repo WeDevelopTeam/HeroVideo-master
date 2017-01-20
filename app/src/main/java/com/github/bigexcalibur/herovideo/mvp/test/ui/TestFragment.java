@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.bilibili.magicasakura.utils.ThemeUtils;
 import com.github.bigexcalibur.herovideo.R;
-import com.github.bigexcalibur.herovideo.mediaplayer.VideoPlayerActivity;
+import com.github.bigexcalibur.herovideo.mediaplayer.MediaPlayerActivity;
 import com.github.bigexcalibur.herovideo.mvp.common.ui.RxLazyFragment;
 import com.github.bigexcalibur.herovideo.network.RetrofitHelper;
 import com.github.bigexcalibur.herovideo.network.auxiliary.ApiConstants;
@@ -64,7 +64,7 @@ public class TestFragment extends RxLazyFragment {
         });
 
         mBtnTest1.setOnClickListener(v -> {
-            startActivity(new Intent(getContext(), VideoPlayerActivity.class));
+            startActivity(new Intent(getContext(), MediaPlayerActivity.class));
         });
 
         mBtnTest2.setOnClickListener(v -> {
@@ -161,7 +161,7 @@ public class TestFragment extends RxLazyFragment {
                             return;
                         }
                         String[] split = str.split("]]");
-                        Intent intent = new Intent(getActivity(),VideoPlayerActivity.class);
+                        Intent intent = new Intent(getActivity(),MediaPlayerActivity.class);
                         intent.putExtra("url",split[0]);
                         getActivity().startActivity(intent);
                     }

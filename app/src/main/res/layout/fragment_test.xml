@@ -22,7 +22,7 @@
         android:layout_below="@+id/tv_test"/>
 
      <EditText
-         android:background="@color/white_30"
+         android:background="@android:color/white"
          android:id="@+id/et_test"
          android:layout_width="200dp"
          android:layout_height="30dp"

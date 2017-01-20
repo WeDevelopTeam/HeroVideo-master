@@ -1,6 +1,5 @@
 package com.github.bigexcalibur.herovideo.mvp.test.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.github.bigexcalibur.herovideo.R;
-import com.github.bigexcalibur.herovideo.mediaplayer.AndroidPlayerActivity;
+import com.github.bigexcalibur.herovideo.mediaplayer.MediaPlayerActivity;
 import com.github.bigexcalibur.herovideo.mvp.common.ui.RxLazyFragment;
 import com.github.bigexcalibur.herovideo.network.RetrofitHelper;
 import com.github.bigexcalibur.herovideo.util.LogUtil;
@@ -123,18 +122,11 @@ public class Test2Fragment extends RxLazyFragment {
                                                     public View getView(int position, View convertView, ViewGroup parent) {
                                                         convertView = getActivity().getLayoutInflater().inflate(R.layout.item_testlist, null);
                                                         TextView tv_item_test = (TextView) convertView.findViewById(R.id.tv_item_test);
-                                                        tv_item_test.setText(""+position);
+                                                        tv_item_test.setText("" + position);
                                                         return convertView;
                                                     }
                                                 });
-                                                mListview.setOnItemClickListener((parent, view1, position, id) -> {
-                                                    Intent intent = new Intent(getActivity(), AndroidPlayerActivity.class);
-//                                                    intent.putStringArrayListExtra("urls", urls);
-                                                    intent.putExtra("url",urls.get(position));
-                                                    getActivity().startActivity(intent);
-                                                });
-
-
+                                                mListview.setOnItemClickListener((parent, view1, position, id) -> MediaPlayerActivity.configPlayer(getActivity()).setTitle(urls.get(position)).play(urls.get(position)));
                                             }
                                         });
                             }
@@ -166,12 +158,14 @@ public class Test2Fragment extends RxLazyFragment {
         }
         LogUtil.test("cid = " + cid);
         String sign = Md5.strToMd5Low32("cid=" + cid + "&from=miniplay&player=1" + SECRETKEY_MINILOADER);
-//        String url = "http://interface.bilibili.com/playurl?&cid=" + cid + "&from=miniplay&player=1" + "&sign=" + sign;
         Map<String, String> map = new HashMap<>();
         map.put("cid", cid);
         map.put("from", "miniplay");
         map.put("player", "1");
         map.put("sign", sign);
+
+        // 真实的视频源地址请求url
+        LogUtil.test("video request url = " + "http://interface.bilibili.com/playurl?&cid=" + cid + "&from=miniplay&player=1" + "&sign=" + sign);
         return map;
     }
 
@@ -189,18 +183,19 @@ public class Test2Fragment extends RxLazyFragment {
         } catch (DocumentException e) {
             e.printStackTrace();
         }
+        assert document != null;
         Element rootElement = document.getRootElement();
         List<Element> elementList = rootElement.elements("durl");
-        LogUtil.test("elementList = " + elementList.size());
+
         ArrayList<String> urlList = new ArrayList<>();
 
         for (Element element : elementList) {
             Element urlElement = element.element("url");
             String url = urlElement.getText();
-//            LogUtil.test("url = " + url);
+            LogUtil.test("video play url = " + url);
             urlList.add(url);
         }
-//        LogUtil.test(urlList.toString());
+
         return urlList;
     }
 }

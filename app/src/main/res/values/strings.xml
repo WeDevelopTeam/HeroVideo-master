@@ -4,14 +4,6 @@
     <!--MagicSakura-->
     <string name="cancel">cancel</string>
     <string name="confirm">ok</string>
-    <string name="textview_title_unlock">Unlock it</string>
-    <string name="textview_title_lock">Lock it</string>
-    <string name="textview_click_before">Unlock it to open the door of the new world !</string>
-    <string name="textview_click_after">Go to : https://github.com/Bilibili/MagicaSakura</string>
-
-    <string name="magicasrkura_prompt_0">隐藏着黑暗力量的钥匙啊，在我面前显示你真正的力量，小樱命令你，封印解除！</string>
-    <string name="magicasrkura_prompt_1">隐藏着星星力量的钥匙啊，在我面前显示你真正的力量，小樱命令你，封印解除！</string>
-    <string name="magicasrkura_prompt_2">库洛里多创造的库洛牌啊，请你舍弃旧形象，以小樱之名命令你，封印解除！</string>
 
     <!--主页-->
     <string name="test_username">赵日天</string>
@@ -30,28 +22,10 @@
 
     <!-- Navigation Items -->
     <string name="item_home">主页</string>
-    <string name="item_group">关注的人</string>
-    <string name="item_tracker">我的钱包</string>
     <string name="item_downloaded">离线缓存</string>
     <string name="item_favourite">我的收藏</string>
     <string name="item_history">历史记录</string>
     <string name="item_settings">设置与帮助</string>
     <string name="item_theme">主题选择</string>
-    <string name="item_app">应用推荐</string>
-    <string name="item_vip">我的大会员</string>
-
-    <!--MediaPlayer-->
-    <string name="video_init">初始化播放器…</string>
-    <string name="video_loading">加载中…</string>
-    <string name="video_error_title">Cannot play video</string>
-    <string name="video_error_text_invalid_progressive_playback">Sorry, this video is not valid for streaming tothis device.</string>
-    <string name="video_error_text_unknown">Sorry, this video cannot be played.</string>
-    <string name="video_error_button">OK</string>
-    <string name="danmaku_switch">弹幕开</string>
-
-    <string name="quality_medium">清晰</string>
-    <string name="quality_smooth">流畅</string>
-    <string name="quality_super">超清</string>
-    <string name="lock">锁屏</string>
 
 </resources>

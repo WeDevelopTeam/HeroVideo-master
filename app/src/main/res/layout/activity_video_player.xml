@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <tv.danmaku.ijk.media.example.widget.media.IjkVideoView
-        android:id="@+id/video_view"
+    <include
+        layout="@layout/media_player"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center" />
@@ -57,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:background="@color/white_30"
+        android:background="@android:color/white"
         android:visibility="gone" >
 
         <ImageView

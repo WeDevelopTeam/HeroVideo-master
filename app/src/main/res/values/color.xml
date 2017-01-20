@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Primary-->
     <color name="theme_color_primary">#fb7299</color>
     <color name="theme_color_primary_dark">#b85671</color>
     <color name="theme_color_primary_trans">#99f0486c</color>
     <color name="theme_color_secondary">#2d2d2d</color>
 
+
     <color name="text_primary_color">#2d2d2d</color>
     <color name="window_background">#eaeaea</color>
 
-    <color name="black_light">#333333</color>
-
     <color name="white">#ffffff</color>
-    <color name="white_trans">#99ffffff</color>
 
     <color name="gray_dark">#999999</color>
     <color name="gray_trans">#44999999</color>
@@ -49,4 +48,25 @@
     <color name="red">#F44336</color>
     <color name="red_dark">#C62828</color>
     <color name="red_trans">#99F44336</color>
+
+    <!-- Grey-->
+    <color name="Grey_50">#FAFAFA</color>
+    <color name="Grey_100">#F5F5F5</color>
+    <color name="Grey_200">#EEEEEE</color>
+    <color name="Grey_300">#E0E0E0</color>
+    <color name="Grey_400">#BDBDBD</color>
+    <color name="Grey_500">#9E9E9E</color>
+    <color name="Grey_600">#757575</color>
+    <color name="Grey_700">#616161</color>
+    <color name="Grey_800">#424242</color>
+    <color name="Grey_900">#212121</color>
+
+    <!--Navigation-->
+    <color name="nav_head_image_background">#F8668D</color>
+    <color name="navigation_background_light">#FFF8F8F8</color>
+    <color name="nav_head_roung_text_background">#FB7BA0</color>
+    <color name="nav_head_round_background">#FDC7D6</color>
+    <color name="navigation_subtitle_primary_text">#FFFFFFFF</color>
+    <color name="navigation_subtitle_secondary_text">#BFFFFFFF</color>
+
 </resources>
