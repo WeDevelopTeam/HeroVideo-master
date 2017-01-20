@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.github.bigexcalibur.herovideo.R;
 import com.github.bigexcalibur.herovideo.mvp.common.ui.RxBaseActivity;
-import com.github.bigexcalibur.herovideo.ui.widget.CircleImageView;
+import com.github.bigexcalibur.herovideo.ui.widget.circle.CircleImageView;
 import com.github.bigexcalibur.herovideo.ui.widget.ThemePickDialog;
 import com.github.bigexcalibur.herovideo.util.ConstantUtil;
 import com.github.bigexcalibur.herovideo.util.LogUtil;

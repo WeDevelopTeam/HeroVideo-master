@@ -65,5 +65,6 @@
     <dimen name="circle_progress_view_small_size">56dp</dimen>
     <dimen name="circle_progress_view_default_border_width">4dp</dimen>
 
-
+    <!--banner height size-->
+    <dimen name="general_banner_height">126dp</dimen>
 </resources>

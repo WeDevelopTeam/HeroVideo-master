@@ -108,6 +108,8 @@ dependencies {
     //xml解析
     //    compile 'org.jsoup:jsoup:1.10.2'
     compile 'org.dom4j:dom4j:2.0.0'
+    //glide
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
 }
 
 repositories {

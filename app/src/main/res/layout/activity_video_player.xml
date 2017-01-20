@@ -27,7 +27,7 @@
         android:visibility="gone">
 
 
-        <com.github.bigexcalibur.herovideo.ui.widget.CircleProgressView
+        <com.github.bigexcalibur.herovideo.ui.widget.circle.CircleProgressView
             android:id="@+id/video_loading_progress"
             android:layout_width="@dimen/circle_progress_view_small_size"
             android:layout_height="@dimen/circle_progress_view_small_size"

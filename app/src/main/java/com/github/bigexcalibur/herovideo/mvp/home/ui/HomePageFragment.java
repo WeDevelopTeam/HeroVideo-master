@@ -18,7 +18,7 @@ import com.github.bigexcalibur.herovideo.R;
 import com.github.bigexcalibur.herovideo.mvp.common.ui.RxLazyFragment;
 import com.github.bigexcalibur.herovideo.mvp.home.ui.adapter.HomePagerAdapter;
 import com.github.bigexcalibur.herovideo.rxbus.event.ThemeChangeEvent;
-import com.github.bigexcalibur.herovideo.ui.widget.CircleImageView;
+import com.github.bigexcalibur.herovideo.ui.widget.circle.CircleImageView;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 import java.util.ArrayList;

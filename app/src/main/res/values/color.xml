@@ -49,18 +49,6 @@
     <color name="red_dark">#C62828</color>
     <color name="red_trans">#99F44336</color>
 
-    <!-- Grey-->
-    <color name="Grey_50">#FAFAFA</color>
-    <color name="Grey_100">#F5F5F5</color>
-    <color name="Grey_200">#EEEEEE</color>
-    <color name="Grey_300">#E0E0E0</color>
-    <color name="Grey_400">#BDBDBD</color>
-    <color name="Grey_500">#9E9E9E</color>
-    <color name="Grey_600">#757575</color>
-    <color name="Grey_700">#616161</color>
-    <color name="Grey_800">#424242</color>
-    <color name="Grey_900">#212121</color>
-
     <!--Navigation-->
     <color name="nav_head_image_background">#F8668D</color>
     <color name="navigation_background_light">#FFF8F8F8</color>

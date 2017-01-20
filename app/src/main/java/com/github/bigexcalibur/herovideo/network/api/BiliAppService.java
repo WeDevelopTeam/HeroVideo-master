@@ -1,8 +1,8 @@
 package com.github.bigexcalibur.herovideo.network.api;
 
 import com.github.bigexcalibur.herovideo.mvp.detail.model.VideoDetailsInfo;
-import com.github.bigexcalibur.herovideo.mvp.recommed.model.RecommendBannerInfo;
-import com.github.bigexcalibur.herovideo.mvp.recommed.model.RecommendInfo;
+import com.github.bigexcalibur.herovideo.mvp.recommend.model.RecommendBannerInfo;
+import com.github.bigexcalibur.herovideo.mvp.recommend.model.RecommendInfo;
 import com.github.bigexcalibur.herovideo.mvp.region.model.RegionDetailsInfo;
 import com.github.bigexcalibur.herovideo.mvp.region.model.RegionRecommendInfo;
 

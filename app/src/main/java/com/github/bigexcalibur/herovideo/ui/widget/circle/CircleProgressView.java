@@ -1,4 +1,4 @@
-package com.github.bigexcalibur.herovideo.ui.widget;
+package com.github.bigexcalibur.herovideo.ui.widget.circle;
 
 import android.content.Context;
 import android.content.res.TypedArray;

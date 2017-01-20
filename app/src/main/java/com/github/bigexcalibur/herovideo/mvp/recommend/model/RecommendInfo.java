@@ -1,4 +1,4 @@
-package com.github.bigexcalibur.herovideo.mvp.recommed.model;
+package com.github.bigexcalibur.herovideo.mvp.recommend.model;
 
 import com.google.gson.annotations.SerializedName;
 

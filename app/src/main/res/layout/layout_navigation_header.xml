@@ -33,7 +33,7 @@
         android:orientation="horizontal"
         android:paddingTop="@dimen/activity_vertical_margin">
 
-        <com.github.bigexcalibur.herovideo.ui.widget.CircleImageView
+        <com.github.bigexcalibur.herovideo.ui.widget.circle.CircleImageView
             android:id="@+id/user_avatar_view"
             android:layout_width="@dimen/navigation_avatar_size"
             android:layout_height="@dimen/navigation_avatar_size"

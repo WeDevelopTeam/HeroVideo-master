@@ -1,4 +1,4 @@
-package com.github.bigexcalibur.herovideo.mvp.recommed.view;
+package com.github.bigexcalibur.herovideo.mvp.recommend.view;
 
 /**
  * Created by Xie.Zhou on 2017/1/18.
