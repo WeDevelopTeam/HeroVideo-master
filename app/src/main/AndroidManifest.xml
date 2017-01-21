@@ -24,6 +24,11 @@
 
         </activity>
 
+        <activity android:name=".mvp.detail.ui.VideoDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            />
+
         <activity android:name=".mvp.test.ui.TestPlayActivity"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:launchMode="singleTop"

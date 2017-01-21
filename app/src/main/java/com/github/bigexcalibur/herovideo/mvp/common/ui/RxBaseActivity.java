@@ -84,11 +84,6 @@ public abstract class RxBaseActivity extends RxAppCompatActivity implements Them
     }
 
     @Override
-    public void onInitThemeChange() {
-
-    }
-
-    @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         if (Build.VERSION.SDK_INT >= 21) {

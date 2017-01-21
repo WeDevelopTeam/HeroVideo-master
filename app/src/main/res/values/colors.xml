@@ -11,6 +11,10 @@
     <color name="Grey_700">#616161</color>
     <color name="Grey_800">#424242</color>
     <color name="Grey_900">#212121</color>
+    <color name="gray">#B8B8B8</color>
+    <color name="gray_20">#B3B3B3</color>
+    <color name="gray_80">#BEBBB4</color>
+    <color name="gray_light_30">#E5E5E5</color>
 
     <!--Black-->
     <color name="black_80">#222222</color>

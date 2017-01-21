@@ -1,5 +1,6 @@
 package com.github.bigexcalibur.herovideo.mvp.test.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +11,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.github.bigexcalibur.herovideo.R;
-import com.github.bigexcalibur.herovideo.mediaplayer.MediaPlayerActivity;
 import com.github.bigexcalibur.herovideo.mvp.common.ui.RxLazyFragment;
+import com.github.bigexcalibur.herovideo.mvp.detail.ui.VideoDetailsActivity;
 import com.github.bigexcalibur.herovideo.network.RetrofitHelper;
+import com.github.bigexcalibur.herovideo.util.ConstantUtil;
 import com.github.bigexcalibur.herovideo.util.LogUtil;
 import com.github.bigexcalibur.herovideo.util.Md5;
 import com.github.bigexcalibur.herovideo.util.ToastUtil;
@@ -126,7 +128,12 @@ public class Test2Fragment extends RxLazyFragment {
                                                         return convertView;
                                                     }
                                                 });
-                                                mListview.setOnItemClickListener((parent, view1, position, id) -> MediaPlayerActivity.configPlayer(getActivity()).setTitle(urls.get(position)).play(urls.get(position)));
+//                                                mListview.setOnItemClickListener((parent, view1, position, id) -> MediaPlayerActivity.configPlayer(getActivity()).setTitle(urls.get(position)).play(urls.get(position)));
+                                                mListview.setOnItemClickListener((parent, view1, position, id) ->{
+                                                    Intent intent = new Intent(getActivity(), VideoDetailsActivity.class);
+                                                    intent.putExtra(ConstantUtil.EXTRA_URL,urls.get(position));
+                                                    startActivity(intent);
+                                                });
                                             }
                                         });
                             }

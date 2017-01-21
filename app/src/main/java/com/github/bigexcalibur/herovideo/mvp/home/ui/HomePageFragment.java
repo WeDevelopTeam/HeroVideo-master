@@ -17,7 +17,6 @@ import com.flyco.tablayout.SlidingTabLayout;
 import com.github.bigexcalibur.herovideo.R;
 import com.github.bigexcalibur.herovideo.mvp.common.ui.RxLazyFragment;
 import com.github.bigexcalibur.herovideo.mvp.home.ui.adapter.HomePagerAdapter;
-import com.github.bigexcalibur.herovideo.rxbus.event.ThemeChangeEvent;
 import com.github.bigexcalibur.herovideo.ui.widget.circle.CircleImageView;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
@@ -112,17 +111,6 @@ public class HomePageFragment extends RxLazyFragment
         mViewPager.setAdapter(mHomeAdapter);
         mSlidingTab.setViewPager(mViewPager);
         mViewPager.setCurrentItem(1);
-    }
-
-    @Override
-    public void onThemeChange(ThemeChangeEvent themeChangeEvent) {
-        super.onThemeChange(themeChangeEvent);
-        switch (themeChangeEvent.eventType){
-            case ThemeChangeEvent.GLOBLE_CHANGE:
-            case ThemeChangeEvent.INIT_CHANGE:
-                mSlidingTab.setBackgroundColor(ThemeUtils.getColorById(getActivity(),R.color.theme_color_primary));
-                break;
-        }
     }
 
     @Override
@@ -231,13 +219,8 @@ public class HomePageFragment extends RxLazyFragment
     }
 
     @Override
-    public void onInitThemeChange() {
-
-    }
-
-    @Override
     public void onGlobalThemeChange() {
-
+        mSlidingTab.setBackgroundColor(ThemeUtils.getColorById(getActivity(),R.color.theme_color_primary));
     }
 
     @Override

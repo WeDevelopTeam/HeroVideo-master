@@ -9,14 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.github.bigexcalibur.herovideo.mvp.common.presenter.RxBaseFragmentViewPresenter;
 import com.github.bigexcalibur.herovideo.mvp.common.view.IRxBaseFragmentView;
-import com.github.bigexcalibur.herovideo.rxbus.RxBus;
 import com.github.bigexcalibur.herovideo.rxbus.event.ThemeChangeEvent;
 import com.trello.rxlifecycle.components.support.RxFragment;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import rx.Subscription;
 
 /**
  * Fragment基类
@@ -35,10 +34,9 @@ public abstract class RxLazyFragment extends RxFragment implements IRxBaseFragme
     protected boolean isVisible;
 
     private Unbinder bind;
+    private RxBaseFragmentViewPresenter rxBaseFragmentViewPresenter;
 
     public abstract @LayoutRes int getLayoutResId();
-
-    private Subscription mThemeChangeSubscription;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle state)
@@ -54,13 +52,14 @@ public abstract class RxLazyFragment extends RxFragment implements IRxBaseFragme
     {
         super.onViewCreated(view, savedInstanceState);
         bind = ButterKnife.bind(this, view);
-        initThemeChangeObserver();
         finishCreateView(savedInstanceState);
-        onThemeChange(new ThemeChangeEvent(ThemeChangeEvent.INIT_CHANGE));
+        rxBaseFragmentViewPresenter = new RxBaseFragmentViewPresenter(this);
+        initThemeChangeObserver();
     }
 
     private void initThemeChangeObserver(){
-        mThemeChangeSubscription = RxBus.getInstance().toObserverable(ThemeChangeEvent.class).subscribe(this::onThemeChange);
+        rxBaseFragmentViewPresenter.initThemeChangeSubscription();
+        rxBaseFragmentViewPresenter.onGlobalThemeChange();
     }
 
     public abstract void finishCreateView(Bundle state);
@@ -81,9 +80,7 @@ public abstract class RxLazyFragment extends RxFragment implements IRxBaseFragme
     {
         super.onDestroyView();
         bind.unbind();
-        if(!mThemeChangeSubscription.isUnsubscribed()) {
-            mThemeChangeSubscription.unsubscribe();
-        }
+        rxBaseFragmentViewPresenter.onDestroyView();
     }
 
     @Override
@@ -178,11 +175,6 @@ public abstract class RxLazyFragment extends RxFragment implements IRxBaseFragme
 
     @Override
     public void onNetDisConnected() {
-
-    }
-
-    @Override
-    public void onInitThemeChange() {
 
     }
 

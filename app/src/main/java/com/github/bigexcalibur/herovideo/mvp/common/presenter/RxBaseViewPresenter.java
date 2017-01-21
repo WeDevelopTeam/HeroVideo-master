@@ -43,8 +43,6 @@ public class RxBaseViewPresenter {
     public void onThemeChange(ThemeChangeEvent themeChangeEvent) {
         switch (themeChangeEvent.eventType) {
             case ThemeChangeEvent.INIT_CHANGE:
-                mIRxBaseView.onInitThemeChange();
-                break;
             case ThemeChangeEvent.GLOBLE_CHANGE:
                 mIRxBaseView.onGlobalThemeChange();
                 break;

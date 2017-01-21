@@ -6,14 +6,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.github.bigexcalibur.herovideo.R;
+import com.github.bigexcalibur.herovideo.mvp.recommend.ui.HomeRecommendFragment;
 import com.github.bigexcalibur.herovideo.mvp.test.ui.Test2Fragment;
 import com.github.bigexcalibur.herovideo.mvp.test.ui.TestFragment;
 
 
 /**
- * Created by hcc on 16/8/4 14:12
- * 100332338@qq.com
- * <p/>
  * 主界面Fragment模块Adapter
  */
 public class HomePagerAdapter extends FragmentPagerAdapter {
@@ -39,10 +37,10 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
                     fragments[position] = new TestFragment();
                     break;
                 case 1:
-                    fragments[position] = new Test2Fragment();
+                    fragments[position] = HomeRecommendFragment.newInstance();
                     break;
                 case 2:
-                    fragments[position] = new TestFragment();
+                    fragments[position] = new Test2Fragment();
                     break;
                 case 3:
                     fragments[position] = new TestFragment();

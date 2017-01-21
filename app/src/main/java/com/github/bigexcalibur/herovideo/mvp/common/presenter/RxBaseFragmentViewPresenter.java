@@ -10,10 +10,11 @@ public class RxBaseFragmentViewPresenter extends RxBaseViewPresenter {
 
     private IRxBaseFragmentView mIRxBaseFragmentView;
 
+    protected RxBaseFragmentViewPresenter(){}
+
     public RxBaseFragmentViewPresenter(IRxBaseFragmentView iRxBaseFragmentView){
-        super();
+        super(iRxBaseFragmentView);
         this.mIRxBaseFragmentView = iRxBaseFragmentView;
     }
-
 
 }

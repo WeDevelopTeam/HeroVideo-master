@@ -10,7 +10,9 @@
     <color name="text_primary_color">#2d2d2d</color>
     <color name="window_background">#eaeaea</color>
 
-    <color name="white">#ffffff</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_30">#F2F2F2</color>
+    <color name="white_80">#FAFAFA</color>
 
     <color name="gray_dark">#999999</color>
     <color name="gray_trans">#44999999</color>
@@ -57,4 +59,7 @@
     <color name="navigation_subtitle_primary_text">#FFFFFFFF</color>
     <color name="navigation_subtitle_secondary_text">#BFFFFFFF</color>
 
+    <!--Text-->
+    <color name="font_normal">#555555</color>
+    <color name="font_gray">#656565</color>
 </resources>

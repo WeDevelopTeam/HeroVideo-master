@@ -2,12 +2,12 @@ package com.github.bigexcalibur.herovideo.mediaplayer;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import android.view.Window;
 import android.widget.Toast;
 
 import com.github.bigexcalibur.herovideo.R;
@@ -18,9 +18,10 @@ public class MediaPlayerActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.media_player);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         Config config = getIntent().getParcelableExtra("config");
         if (config == null || TextUtils.isEmpty(config.url)) {
             Toast.makeText(this, R.string.giraffe_player_url_empty, Toast.LENGTH_SHORT).show();
@@ -30,6 +31,7 @@ public class MediaPlayerActivity extends Activity {
             player.setDefaultRetryTime(config.defaultRetryTime);
             player.setFullScreenOnly(config.fullScreenOnly);
             player.setScaleType(TextUtils.isEmpty(config.scaleType) ? MediaPlayer.SCALETYPE_FITPARENT : config.scaleType);
+//            player.setScaleType(MediaPlayer.SCALETYPE_FILLPARENT);
             player.setTitle(TextUtils.isEmpty(config.title) ? "" : config.title);
             player.setShowNavIcon(config.showNavIcon);
             player.play(config.url);

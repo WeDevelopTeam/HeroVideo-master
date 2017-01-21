@@ -16,8 +16,6 @@ public interface IRxBaseView {
 
     void onNetDisConnected();
 
-    void onInitThemeChange();
-
     void onGlobalThemeChange();
 
     void onSpecificThemeChange(View view);

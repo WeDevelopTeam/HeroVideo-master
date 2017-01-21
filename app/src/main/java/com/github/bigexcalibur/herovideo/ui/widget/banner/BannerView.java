@@ -4,11 +4,11 @@ import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.bilibili.magicasakura.widgets.TintView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.github.bigexcalibur.herovideo.R;
@@ -138,7 +138,7 @@ public class BannerView extends RelativeLayout implements BannerAdapter.ViewPage
         //初始化与个数相同的指示器点
         for (int i = 0; i < pointSize; i++)
         {
-            View dot = new View(getContext());
+            TintView dot = new TintView(getContext());
             dot.setBackgroundResource(unSelcetRes);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     DisplayUtil.dp2px(getContext(), 5),

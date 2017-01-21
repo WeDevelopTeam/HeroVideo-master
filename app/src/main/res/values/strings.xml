@@ -31,6 +31,7 @@
     <!--MediaPlayer-->
     <string name="video_init">初始化播放器…</string>
     <string name="video_loading">加载中…</string>
+    <string name="play_immediately">立即播放</string>
     <string name="giraffe_player_url_empty">Please specify the address of the video playback</string>
     <string name="small_problem">Player encountered a small problem</string>
     <string name="can_not_play">can not play this video</string>
