@@ -37,4 +37,17 @@
     <string name="can_not_play">can not play this video</string>
     <string name="not_support">player not support this device</string>
 
+    <!--App 介绍-->
+    <string name="about_user_head_layout">硬币: 47</string>
+    <string name="about_introduce">「哔哩哔哩」</string>
+    <string name="about_menu_action_share">分享</string>
+    <string name="about_developers">关于我</string>
+    <string name="about">关于哔哩哔哩</string>
+    <string name="about_version">V1.0</string>
+
+    <!--详情页-->
+    <string name="coin">投硬币</string>
+    <string name="collection">收藏</string>
+    <string name="cache">缓存</string>
+    <string name="add_follow">+关注</string>
 </resources>

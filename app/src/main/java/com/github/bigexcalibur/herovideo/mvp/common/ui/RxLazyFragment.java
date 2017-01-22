@@ -192,4 +192,5 @@ public abstract class RxLazyFragment extends RxFragment implements IRxBaseFragme
     public void onInvisible() {
 
     }
+
 }

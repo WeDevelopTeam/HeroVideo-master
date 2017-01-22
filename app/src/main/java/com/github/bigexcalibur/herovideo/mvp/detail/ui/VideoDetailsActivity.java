@@ -16,7 +16,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.text.TextPaint;
-import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,16 +24,16 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.github.bigexcalibur.herovideo.R;
 import com.github.bigexcalibur.herovideo.mediaplayer.MediaPlayerActivity;
 import com.github.bigexcalibur.herovideo.mvp.common.ui.RxBaseActivity;
 import com.github.bigexcalibur.herovideo.mvp.detail.model.VideoDetailsInfo;
+import com.github.bigexcalibur.herovideo.mvp.test.ui.TestFragment;
 import com.github.bigexcalibur.herovideo.network.RetrofitHelper;
 import com.github.bigexcalibur.herovideo.util.ConstantUtil;
 import com.github.bigexcalibur.herovideo.util.DisplayUtil;
+import com.github.bigexcalibur.herovideo.util.LogUtil;
 import com.github.bigexcalibur.herovideo.util.helper.SystemBarHelper;
 
 import java.util.ArrayList;
@@ -80,7 +79,7 @@ public class VideoDetailsActivity extends RxBaseActivity {
 
   private List<String> titles = new ArrayList<>();
 
-  private int av;
+  private String av;
 
   private String imgUrl;
 
@@ -99,7 +98,7 @@ public class VideoDetailsActivity extends RxBaseActivity {
 
     Intent intent = getIntent();
     if (intent != null) {
-      av = intent.getIntExtra(ConstantUtil.EXTRA_AV, -1);
+      av = intent.getStringExtra(ConstantUtil.EXTRA_AV);
       imgUrl = intent.getStringExtra(ConstantUtil.EXTRA_IMG_URL);
     }
 
@@ -110,7 +109,6 @@ public class VideoDetailsActivity extends RxBaseActivity {
 //        .placeholder(R.drawable.bili_default_image_tv)
 //        .dontAnimate()
 //        .into(mVideoPreview);
-
     loadData();
 
     mFAB.setClickable(false);
@@ -241,6 +239,7 @@ public class VideoDetailsActivity extends RxBaseActivity {
         .subscribe(videoDetails -> {
 
           mVideoDetailsInfo = videoDetails.getData();
+          LogUtil.test(" VideoDetails finishTask" + mVideoDetailsInfo.getTitle());
           finishTask();
         }, throwable -> {
 
@@ -258,22 +257,22 @@ public class VideoDetailsActivity extends RxBaseActivity {
         ColorStateList.valueOf(getResources().getColor(R.color.theme_color_primary)));
     mCollapsingToolbarLayout.setTitle("");
 
-    if (TextUtils.isEmpty(imgUrl)) {
-      Glide.with(VideoDetailsActivity.this)
-          .load(mVideoDetailsInfo)
-          .centerCrop()
-          .diskCacheStrategy(DiskCacheStrategy.ALL)
-          .placeholder(R.drawable.bili_default_image_tv)
-          .dontAnimate()
-          .into(mVideoPreview);
-    }
+//    if (TextUtils.isEmpty(imgUrl)) {
+//      Glide.with(VideoDetailsActivity.this)
+//          .load(mVideoDetailsInfo)
+//          .centerCrop()
+//          .diskCacheStrategy(DiskCacheStrategy.ALL)
+//          .placeholder(R.drawable.bili_default_image_tv)
+//          .dontAnimate()
+//          .into(mVideoPreview);
+//    }
 
-//    VideoIntroductionFragment mVideoIntroductionFragment = VideoIntroductionFragment.newInstance(
-//        av);
+    VideoIntroductionFragment mVideoIntroductionFragment = VideoIntroductionFragment.newInstance(
+        av);
 //    VideoCommentFragment mVideoCommentFragment = VideoCommentFragment.newInstance(av);
-
-//    fragments.add(mVideoIntroductionFragment);
-//    fragments.add(mVideoCommentFragment);
+    TestFragment mVideoCommentFragment = new TestFragment();
+    fragments.add(mVideoIntroductionFragment);
+    fragments.add(mVideoCommentFragment);
 
     setPagerTitle(String.valueOf(mVideoDetailsInfo.getStat().getReply()));
   }
@@ -283,7 +282,7 @@ public class VideoDetailsActivity extends RxBaseActivity {
 
     titles.add("简介");
     titles.add("评论" + "(" + num + ")");
-
+    LogUtil.test(" fragments = " +fragments.size());
     VideoDetailsPagerAdapter mAdapter = new VideoDetailsPagerAdapter(getSupportFragmentManager(),
         fragments, titles);
 

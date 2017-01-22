@@ -34,7 +34,7 @@
     <color name="green">#4CAF50</color>
     <color name="green_dark">#2E7D32</color>
     <color name="green_trans">#994CAF50</color>
-
+    <color name="green_300">#81C784</color>
     <color name="green_light">#8BC34A</color>
     <color name="green_light_dark">#558B2F</color>
     <color name="green_light_trans">#998BC34A</color>
@@ -46,6 +46,7 @@
     <color name="orange">#FF9800</color>
     <color name="orange_dark">#EF6C00</color>
     <color name="orange_trans">#99FF9800</color>
+    <color name="orange_500">#FF9800</color>
 
     <color name="red">#F44336</color>
     <color name="red_dark">#C62828</color>

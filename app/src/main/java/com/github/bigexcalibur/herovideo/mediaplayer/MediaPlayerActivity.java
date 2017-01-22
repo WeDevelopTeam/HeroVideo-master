@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
+import android.view.Window;
 import android.widget.Toast;
 
 import com.github.bigexcalibur.herovideo.R;
@@ -18,10 +19,10 @@ public class MediaPlayerActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.media_player);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        setContentView(R.layout.media_player);
         Config config = getIntent().getParcelableExtra("config");
         if (config == null || TextUtils.isEmpty(config.url)) {
             Toast.makeText(this, R.string.giraffe_player_url_empty, Toast.LENGTH_SHORT).show();

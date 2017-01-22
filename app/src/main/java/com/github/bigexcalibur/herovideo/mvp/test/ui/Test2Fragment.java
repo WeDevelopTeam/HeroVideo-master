@@ -63,6 +63,8 @@ public class Test2Fragment extends RxLazyFragment {
     public void finishCreateView(Bundle state) {
 
     }
+    //    852476
+    //    1064641
 
     @OnClick(R.id.btn_test2)
     public void onClick(View view) {
@@ -132,6 +134,7 @@ public class Test2Fragment extends RxLazyFragment {
                                                 mListview.setOnItemClickListener((parent, view1, position, id) ->{
                                                     Intent intent = new Intent(getActivity(), VideoDetailsActivity.class);
                                                     intent.putExtra(ConstantUtil.EXTRA_URL,urls.get(position));
+                                                    intent.putExtra(ConstantUtil.EXTRA_AV,aid);
                                                     startActivity(intent);
                                                 });
                                             }
@@ -143,6 +146,8 @@ public class Test2Fragment extends RxLazyFragment {
 
         }
     }
+
+    String aid;
 
     public Map<String, String> parseSearchUrl(ResponseBody responseBody) {
         String body;
@@ -160,10 +165,22 @@ public class Test2Fragment extends RxLazyFragment {
         if (m.find()) {
             cid = m.group(1);
         } else {
-            ToastUtil.ShortToast("未找到资源");
+            ToastUtil.ShortToast("未找到cid");
             return null;
         }
-        LogUtil.test("cid = " + cid);
+
+        // 创建 Pattern 对象
+        Pattern r2 = Pattern.compile("aid=([^\"&]+)");
+        // 现在创建 matcher 对象
+        Matcher m2 = r2.matcher(body);
+        if (m2.find()) {
+            aid = m2.group(1);
+        } else {
+            ToastUtil.ShortToast("未找到aid");
+            return null;
+        }
+
+        LogUtil.test("cid = " + cid +"  aid = " +aid);
         String sign = Md5.strToMd5Low32("cid=" + cid + "&from=miniplay&player=1" + SECRETKEY_MINILOADER);
         Map<String, String> map = new HashMap<>();
         map.put("cid", cid);

@@ -73,4 +73,25 @@
     <dimen name="floating_action_button_margin">16dp</dimen>
     <dimen name="floating_action_button_size_half">32dp</dimen>
     <dimen name="shadow_gradient_height">90dp</dimen>
+
+    <!-- Layouts' special resources -->
+    <dimen name="video_info_mini_icons_size">12dp</dimen>
+    <dimen name="video_info_count_text_margin_start">4dp</dimen>
+    <dimen name="video_info_sp_layout_height">150dp</dimen>
+
+    <!--video details size-->
+    <dimen name="video_details_margin_top">26dp</dimen>
+    <dimen name="video_details_text_width">70dp</dimen>
+    <dimen name="video_details_text_height">30dp</dimen>
+
+    <!-- Card -->
+    <dimen name="touch_raise">6dp</dimen>
+    <dimen name="card_margin">10dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_small_radius">2dp</dimen>
+    <dimen name="card_small_elevation">0dp</dimen>
+    <dimen name="card_corner_radius">2dp</dimen>
+    <dimen name="card_title_margin">5dp</dimen>
+    <dimen name="title_margin_small">8dp</dimen>
+    <dimen name="card_charging_width">110dp</dimen>
 </resources>
