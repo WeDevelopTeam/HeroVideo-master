@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -19,6 +20,7 @@ import android.text.TextPaint;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
@@ -26,6 +28,7 @@ import android.widget.TextView;
 
 import com.flyco.tablayout.SlidingTabLayout;
 import com.github.bigexcalibur.herovideo.R;
+import com.github.bigexcalibur.herovideo.mediaplayer.MediaPlayer;
 import com.github.bigexcalibur.herovideo.mediaplayer.MediaPlayerActivity;
 import com.github.bigexcalibur.herovideo.mvp.common.ui.RxBaseActivity;
 import com.github.bigexcalibur.herovideo.mvp.detail.model.VideoDetailsInfo;
@@ -48,59 +51,59 @@ import rx.schedulers.Schedulers;
  */
 public class VideoDetailsActivity extends RxBaseActivity {
 
-  @BindView(R.id.toolbar)
-  Toolbar mToolbar;
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
 
-  @BindView(R.id.collapsing_toolbar)
-  CollapsingToolbarLayout mCollapsingToolbarLayout;
+    @BindView(R.id.collapsing_toolbar)
+    CollapsingToolbarLayout mCollapsingToolbarLayout;
 
-  @BindView(R.id.video_preview)
-  ImageView mVideoPreview;
+    @BindView(R.id.video_preview)
+    ImageView mVideoPreview;
 
-  @BindView(R.id.tab_layout)
-  SlidingTabLayout mSlidingTabLayout;
+    @BindView(R.id.tab_layout)
+    SlidingTabLayout mSlidingTabLayout;
 
-  @BindView(R.id.view_pager)
-  ViewPager mViewPager;
+    @BindView(R.id.view_pager)
+    ViewPager mViewPager;
 
-  @BindView(R.id.fab)
-  FloatingActionButton mFAB;
+    @BindView(R.id.fab)
+    FloatingActionButton mFAB;
 
-  @BindView(R.id.app_bar_layout)
-  AppBarLayout mAppBarLayout;
+    @BindView(R.id.app_bar_layout)
+    AppBarLayout mAppBarLayout;
 
-  @BindView(R.id.tv_player)
-  TextView mTvPlayer;
+    @BindView(R.id.tv_player)
+    TextView mTvPlayer;
 
-  @BindView(R.id.tv_av)
-  TextView mAvText;
+    @BindView(R.id.tv_av)
+    TextView mAvText;
 
-  private List<Fragment> fragments = new ArrayList<>();
+    private List<Fragment> fragments = new ArrayList<>();
 
-  private List<String> titles = new ArrayList<>();
+    private List<String> titles = new ArrayList<>();
 
-  private String av;
+    private String av;
 
-  private String imgUrl;
+    private String imgUrl;
 
-  private VideoDetailsInfo.DataBean mVideoDetailsInfo;
-
-
-  @Override
-  public int getLayoutId() {
-
-    return R.layout.activity_video_details;
-  }
+    private VideoDetailsInfo.DataBean mVideoDetailsInfo;
 
 
-  @Override
-  public void initViews(Bundle savedInstanceState) {
+    @Override
+    public int getLayoutId() {
 
-    Intent intent = getIntent();
-    if (intent != null) {
-      av = intent.getStringExtra(ConstantUtil.EXTRA_AV);
-      imgUrl = intent.getStringExtra(ConstantUtil.EXTRA_IMG_URL);
+        return R.layout.activity_video_details;
     }
+
+
+    @Override
+    public void initViews(Bundle savedInstanceState) {
+
+        Intent intent = getIntent();
+        if (intent != null) {
+            av = intent.getStringExtra(ConstantUtil.EXTRA_AV);
+            imgUrl = intent.getStringExtra(ConstantUtil.EXTRA_IMG_URL);
+        }
 
 //    Glide.with(VideoDetailsActivity.this)
 //        .load(UrlHelper.getClearVideoPreviewUrl(imgUrl))
@@ -109,153 +112,163 @@ public class VideoDetailsActivity extends RxBaseActivity {
 //        .placeholder(R.drawable.bili_default_image_tv)
 //        .dontAnimate()
 //        .into(mVideoPreview);
-    loadData();
+        loadData();
 
-    mFAB.setClickable(false);
-    mFAB.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.gray)));
-    mFAB.setTranslationY(-getResources().getDimension(R.dimen.floating_action_button_size_half));
-    mFAB.setOnClickListener(v -> {
-      String videoUrl = intent.getStringExtra(ConstantUtil.EXTRA_URL);
-      MediaPlayerActivity.configPlayer(VideoDetailsActivity.this).setTitle(videoUrl).play(videoUrl);
-    });
+        mFAB.setClickable(false);
+        mFAB.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.gray)));
+        mFAB.setTranslationY(-getResources().getDimension(R.dimen.floating_action_button_size_half));
+        mFAB.setOnClickListener(v -> {
+            String videoUrl = intent.getStringExtra(ConstantUtil.EXTRA_URL);
+            MediaPlayerActivity.configPlayer(VideoDetailsActivity.this)
+                    .setTitle(videoUrl)
+                    .setFullScreenOnly(true)
+                    .setScaleType(MediaPlayer.SCALETYPE_FILLPARENT)
+                    .play(videoUrl);
+        });
 
-    mAppBarLayout.addOnOffsetChangedListener(
-        (appBarLayout, verticalOffset) -> setViewsTranslation(verticalOffset));
-    mAppBarLayout.addOnOffsetChangedListener(new AppBarStateChangeEvent() {
+        mAppBarLayout.addOnOffsetChangedListener(
+                (appBarLayout, verticalOffset) -> setViewsTranslation(verticalOffset));
+        mAppBarLayout.addOnOffsetChangedListener(new AppBarStateChangeEvent() {
 
-      @Override
-      public void onStateChanged(AppBarLayout appBarLayout, State state, int verticalOffset) {
+            @Override
+            public void onStateChanged(AppBarLayout appBarLayout, State state, int verticalOffset) {
 
-        if (state == State.EXPANDED) {
-          //展开状态
-          mTvPlayer.setVisibility(View.GONE);
-          mAvText.setVisibility(View.VISIBLE);
-          mToolbar.setContentInsetsRelative(DisplayUtil.dp2px(VideoDetailsActivity.this, 15), 0);
-        } else if (state == State.COLLAPSED) {
-          //折叠状态
-          mTvPlayer.setVisibility(View.VISIBLE);
-          mAvText.setVisibility(View.GONE);
-          mToolbar.setContentInsetsRelative(DisplayUtil.dp2px(VideoDetailsActivity.this, 150), 0);
-        } else {
-          mTvPlayer.setVisibility(View.GONE);
-          mAvText.setVisibility(View.VISIBLE);
-          mToolbar.setContentInsetsRelative(DisplayUtil.dp2px(VideoDetailsActivity.this, 15), 0);
-        }
-      }
-    });
-  }
-
-  @SuppressLint("SetTextI18n")
-  @Override
-  public void initToolbar() {
-
-    mToolbar.setTitle("");
-    setSupportActionBar(mToolbar);
-    ActionBar supportActionBar = getSupportActionBar();
-    if (supportActionBar != null) {
-      supportActionBar.setDisplayHomeAsUpEnabled(true);
+                if (state == State.EXPANDED) {
+                    //展开状态
+                    mTvPlayer.setVisibility(View.GONE);
+                    mAvText.setVisibility(View.VISIBLE);
+                    mToolbar.setContentInsetsRelative(DisplayUtil.dp2px(VideoDetailsActivity.this, 15), 0);
+                } else if (state == State.COLLAPSED) {
+                    //折叠状态
+                    mTvPlayer.setVisibility(View.VISIBLE);
+                    mAvText.setVisibility(View.GONE);
+                    mToolbar.setContentInsetsRelative(DisplayUtil.dp2px(VideoDetailsActivity.this, 150), 0);
+                } else {
+                    mTvPlayer.setVisibility(View.GONE);
+                    mAvText.setVisibility(View.VISIBLE);
+                    mToolbar.setContentInsetsRelative(DisplayUtil.dp2px(VideoDetailsActivity.this, 15), 0);
+                }
+            }
+        });
     }
 
-    //设置还没收缩时状态下字体颜色
-    mCollapsingToolbarLayout.setExpandedTitleColor(Color.TRANSPARENT);
-    //设置收缩后Toolbar上字体的颜色
-    mCollapsingToolbarLayout.setCollapsedTitleTextColor(Color.WHITE);
+    @Override
+    protected void initStatusBar() {
+        //设置StatusBar透明
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        } else {
+            SystemBarHelper.immersiveStatusBar(this);
+            SystemBarHelper.setHeightAndPadding(this, mToolbar);
+        }
+    }
 
-    //设置StatusBar透明
-    SystemBarHelper.immersiveStatusBar(this);
-    SystemBarHelper.setHeightAndPadding(this, mToolbar);
+    @SuppressLint("SetTextI18n")
+    @Override
+    public void initToolbar() {
 
-    mAvText.setText("av" + av);
-  }
+        mToolbar.setTitle("");
+        setSupportActionBar(mToolbar);
+        ActionBar supportActionBar = getSupportActionBar();
+        if (supportActionBar != null) {
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+        }
+        //设置还没收缩时状态下字体颜色
+        mCollapsingToolbarLayout.setExpandedTitleColor(Color.TRANSPARENT);
+        //设置收缩后Toolbar上字体的颜色
+        mCollapsingToolbarLayout.setCollapsedTitleTextColor(Color.WHITE);
+
+        mAvText.setText("av" + av);
+    }
 
 
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
 
 //    getMenuInflater().inflate(R.menu.menu_video, menu);
-    return true;
-  }
-
-
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-
-    if (item.getItemId() == android.R.id.home) {
-      onBackPressed();
+        return true;
     }
-    return super.onOptionsItemSelected(item);
-  }
 
 
-  private void setViewsTranslation(int target) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
 
-    mFAB.setTranslationY(target);
-    if (target == 0) {
-      showFAB();
-    } else if (target < 0) {
-      hideFAB();
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
-  }
 
 
-  public static void launch(Activity activity, int aid, String imgUrl) {
+    private void setViewsTranslation(int target) {
 
-    Intent intent = new Intent(activity, VideoDetailsActivity.class);
-    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    intent.putExtra(ConstantUtil.EXTRA_AV, aid);
-    intent.putExtra(ConstantUtil.EXTRA_IMG_URL, imgUrl);
-    activity.startActivity(intent);
-  }
-
-
-  private void showFAB() {
-
-    mFAB.animate().scaleX(1f).scaleY(1f)
-        .setInterpolator(new OvershootInterpolator())
-        .start();
-
-    mFAB.setClickable(true);
-  }
+        mFAB.setTranslationY(target);
+        if (target == 0) {
+            showFAB();
+        } else if (target < 0) {
+            hideFAB();
+        }
+    }
 
 
-  private void hideFAB() {
+    public static void launch(Activity activity, int aid, String imgUrl) {
 
-    mFAB.animate().scaleX(0f).scaleY(0f)
-        .setInterpolator(new AccelerateInterpolator())
-        .start();
-
-    mFAB.setClickable(false);
-  }
-
-
-  @Override
-  public void loadData() {
-
-    RetrofitHelper.getBiliAppAPI()
-        .getVideoDetails(av)
-        .compose(this.bindToLifecycle())
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(videoDetails -> {
-
-          mVideoDetailsInfo = videoDetails.getData();
-          LogUtil.test(" VideoDetails finishTask" + mVideoDetailsInfo.getTitle());
-          finishTask();
-        }, throwable -> {
-
-          mFAB.setClickable(false);
-          mFAB.setBackgroundTintList(ColorStateList.valueOf(
-              getResources().getColor(R.color.gray_20)));
-        });
-  }
+        Intent intent = new Intent(activity, VideoDetailsActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra(ConstantUtil.EXTRA_AV, aid);
+        intent.putExtra(ConstantUtil.EXTRA_IMG_URL, imgUrl);
+        activity.startActivity(intent);
+    }
 
 
-  public void finishTask() {
+    private void showFAB() {
 
-    mFAB.setClickable(true);
-    mFAB.setBackgroundTintList(
-        ColorStateList.valueOf(getResources().getColor(R.color.theme_color_primary)));
-    mCollapsingToolbarLayout.setTitle("");
+        mFAB.animate().scaleX(1f).scaleY(1f)
+                .setInterpolator(new OvershootInterpolator())
+                .start();
+
+        mFAB.setClickable(true);
+    }
+
+
+    private void hideFAB() {
+
+        mFAB.animate().scaleX(0f).scaleY(0f)
+                .setInterpolator(new AccelerateInterpolator())
+                .start();
+
+        mFAB.setClickable(false);
+    }
+
+
+    @Override
+    public void loadData() {
+
+        RetrofitHelper.getBiliAppAPI()
+                .getVideoDetails(av)
+                .compose(this.bindToLifecycle())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(videoDetails -> {
+
+                    mVideoDetailsInfo = videoDetails.getData();
+                    LogUtil.test(" VideoDetails finishTask" + mVideoDetailsInfo.getTitle());
+                    finishTask();
+                }, throwable -> {
+
+                    mFAB.setClickable(false);
+                    mFAB.setBackgroundTintList(ColorStateList.valueOf(
+                            getResources().getColor(R.color.gray_20)));
+                });
+    }
+
+
+    public void finishTask() {
+
+        mFAB.setClickable(true);
+        mFAB.setBackgroundTintList(
+                ColorStateList.valueOf(getResources().getColor(R.color.theme_color_primary)));
+        mCollapsingToolbarLayout.setTitle("");
 
 //    if (TextUtils.isEmpty(imgUrl)) {
 //      Glide.with(VideoDetailsActivity.this)
@@ -267,95 +280,95 @@ public class VideoDetailsActivity extends RxBaseActivity {
 //          .into(mVideoPreview);
 //    }
 
-    VideoIntroductionFragment mVideoIntroductionFragment = VideoIntroductionFragment.newInstance(
-        av);
+        VideoIntroductionFragment mVideoIntroductionFragment = VideoIntroductionFragment.newInstance(
+                av);
 //    VideoCommentFragment mVideoCommentFragment = VideoCommentFragment.newInstance(av);
-    TestFragment mVideoCommentFragment = new TestFragment();
-    fragments.add(mVideoIntroductionFragment);
-    fragments.add(mVideoCommentFragment);
+        TestFragment mVideoCommentFragment = new TestFragment();
+        fragments.add(mVideoIntroductionFragment);
+        fragments.add(mVideoCommentFragment);
 
-    setPagerTitle(String.valueOf(mVideoDetailsInfo.getStat().getReply()));
-  }
-
-
-  private void setPagerTitle(String num) {
-
-    titles.add("简介");
-    titles.add("评论" + "(" + num + ")");
-    LogUtil.test(" fragments = " +fragments.size());
-    VideoDetailsPagerAdapter mAdapter = new VideoDetailsPagerAdapter(getSupportFragmentManager(),
-        fragments, titles);
-
-    mViewPager.setAdapter(mAdapter);
-    mViewPager.setOffscreenPageLimit(2);
-    mSlidingTabLayout.setViewPager(mViewPager);
-    measureTabLayoutTextWidth(0);
-    mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
-      @Override
-      public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-      }
-
-
-      @Override
-      public void onPageSelected(int position) {
-
-        measureTabLayoutTextWidth(position);
-      }
-
-
-      @Override
-      public void onPageScrollStateChanged(int state) {
-
-      }
-    });
-  }
-
-
-  private void measureTabLayoutTextWidth(int position) {
-
-    String title = titles.get(position);
-    TextView titleView = mSlidingTabLayout.getTitleView(position);
-    TextPaint paint = titleView.getPaint();
-    float textWidth = paint.measureText(title);
-    mSlidingTabLayout.setIndicatorWidth(textWidth / 3);
-  }
-
-
-  public static class VideoDetailsPagerAdapter extends FragmentStatePagerAdapter {
-
-    private List<Fragment> fragments;
-
-    private List<String> titles;
-
-
-    VideoDetailsPagerAdapter(FragmentManager fm, List<Fragment> fragments, List<String> titles) {
-
-      super(fm);
-      this.fragments = fragments;
-      this.titles = titles;
+        setPagerTitle(String.valueOf(mVideoDetailsInfo.getStat().getReply()));
     }
 
 
-    @Override
-    public Fragment getItem(int position) {
+    private void setPagerTitle(String num) {
 
-      return fragments.get(position);
+        titles.add("简介");
+        titles.add("评论" + "(" + num + ")");
+        LogUtil.test(" fragments = " + fragments.size());
+        VideoDetailsPagerAdapter mAdapter = new VideoDetailsPagerAdapter(getSupportFragmentManager(),
+                fragments, titles);
+
+        mViewPager.setAdapter(mAdapter);
+        mViewPager.setOffscreenPageLimit(2);
+        mSlidingTabLayout.setViewPager(mViewPager);
+        measureTabLayoutTextWidth(0);
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+
+            @Override
+            public void onPageSelected(int position) {
+
+                measureTabLayoutTextWidth(position);
+            }
+
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
 
-    @Override
-    public int getCount() {
+    private void measureTabLayoutTextWidth(int position) {
 
-      return fragments.size();
+        String title = titles.get(position);
+        TextView titleView = mSlidingTabLayout.getTitleView(position);
+        TextPaint paint = titleView.getPaint();
+        float textWidth = paint.measureText(title);
+        mSlidingTabLayout.setIndicatorWidth(textWidth / 3);
     }
 
 
-    @Override
-    public CharSequence getPageTitle(int position) {
+    public static class VideoDetailsPagerAdapter extends FragmentStatePagerAdapter {
 
-      return titles.get(position);
+        private List<Fragment> fragments;
+
+        private List<String> titles;
+
+
+        VideoDetailsPagerAdapter(FragmentManager fm, List<Fragment> fragments, List<String> titles) {
+
+            super(fm);
+            this.fragments = fragments;
+            this.titles = titles;
+        }
+
+
+        @Override
+        public Fragment getItem(int position) {
+
+            return fragments.get(position);
+        }
+
+
+        @Override
+        public int getCount() {
+
+            return fragments.size();
+        }
+
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+
+            return titles.get(position);
+        }
     }
-  }
 }

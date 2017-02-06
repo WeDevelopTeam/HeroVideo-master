@@ -83,17 +83,21 @@ public abstract class RxBaseActivity extends RxAppCompatActivity implements Them
 
     }
 
-    @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
+    protected void initStatusBar(){
         if (Build.VERSION.SDK_INT >= 21) {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(ThemeUtils.getColorById(this, R.color.theme_color_primary_dark));
+            window.setStatusBarColor(ThemeUtils.getColorById(this, R.color.theme_color_primary));
             ActivityManager.TaskDescription description = new ActivityManager.TaskDescription(null, null, ThemeUtils.getThemeAttrColor(this, android.R.attr.colorPrimary));
             setTaskDescription(description);
         }
+    }
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        initStatusBar();
     }
 
     // MagicSakura 主题切换
@@ -112,7 +116,7 @@ public abstract class RxBaseActivity extends RxAppCompatActivity implements Them
                                 final RxBaseActivity context = RxBaseActivity.this;
                                 ActivityManager.TaskDescription taskDescription = new ActivityManager.TaskDescription(null, null, ThemeUtils.getThemeAttrColor(context, android.R.attr.colorPrimary));
                                 setTaskDescription(taskDescription);
-                                getWindow().setStatusBarColor(ThemeUtils.getColorById(context, R.color.theme_color_primary_dark));
+                                getWindow().setStatusBarColor(ThemeUtils.getColorById(context, R.color.theme_color_primary));
                             }
                             // post主题切换的消息,方便Fragment等完成主题切换
                             mRxBaseViewPresenter.onGlobalThemeChange();

@@ -17,7 +17,6 @@ import com.github.bigexcalibur.herovideo.network.RetrofitHelper;
 import com.github.bigexcalibur.herovideo.ui.widget.CustomEmptyView;
 import com.github.bigexcalibur.herovideo.ui.widget.banner.BannerEntity;
 import com.github.bigexcalibur.herovideo.ui.widget.sectioned.SectionedRecyclerViewAdapter;
-import com.github.bigexcalibur.herovideo.util.LogUtil;
 import com.github.bigexcalibur.herovideo.util.SnackbarUtil;
 
 import java.util.ArrayList;
@@ -30,9 +29,6 @@ import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by hcc on 16/8/4 11:58
- * 100332338@qq.com
- * <p/>
  * 主页推荐界面
  */
 public class HomeRecommendFragment extends RxLazyFragment
@@ -174,7 +170,6 @@ public class HomeRecommendFragment extends RxLazyFragment
      */
     private void convertBanner()
     {
-
         Observable.from(recommendBanners)
                 .compose(bindToLifecycle())
                 .forEach(dataBean -> banners.add(new BannerEntity(dataBean.getValue(),

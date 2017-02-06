@@ -21,7 +21,6 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
     private Fragment[] fragments;
 
     public HomePagerAdapter(FragmentManager fm, Context context) {
-
         super(fm);
         TITLES = context.getResources().getStringArray(R.array.sections);
         fragments = new Fragment[TITLES.length];

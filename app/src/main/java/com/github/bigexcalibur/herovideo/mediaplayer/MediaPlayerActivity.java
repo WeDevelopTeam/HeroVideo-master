@@ -32,7 +32,6 @@ public class MediaPlayerActivity extends Activity {
             player.setDefaultRetryTime(config.defaultRetryTime);
             player.setFullScreenOnly(config.fullScreenOnly);
             player.setScaleType(TextUtils.isEmpty(config.scaleType) ? MediaPlayer.SCALETYPE_FITPARENT : config.scaleType);
-//            player.setScaleType(MediaPlayer.SCALETYPE_FILLPARENT);
             player.setTitle(TextUtils.isEmpty(config.title) ? "" : config.title);
             player.setShowNavIcon(config.showNavIcon);
             player.play(config.url);

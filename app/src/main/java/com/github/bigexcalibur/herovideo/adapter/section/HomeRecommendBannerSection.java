@@ -15,9 +15,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by hcc on 16/8/27 14:06
- * 100332338@qq.com
- * <p/>
  * 首页推荐界面轮播图Section
  */
 public class HomeRecommendBannerSection extends StatelessSection
