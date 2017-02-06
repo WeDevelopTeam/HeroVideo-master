@@ -28,7 +28,6 @@ public class MediaPlayerActivity extends Activity {
             Toast.makeText(this, R.string.giraffe_player_url_empty, Toast.LENGTH_SHORT).show();
         } else {
             player = new MediaPlayer(this);
-            player.setTitle(config.title);
             player.setDefaultRetryTime(config.defaultRetryTime);
             player.setFullScreenOnly(config.fullScreenOnly);
             player.setScaleType(TextUtils.isEmpty(config.scaleType) ? MediaPlayer.SCALETYPE_FITPARENT : config.scaleType);

@@ -42,12 +42,6 @@
                         android:scaleType="fitXY"
                         app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
                         />
-
-                    <!--<View-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="@dimen/head_image_bg_height"-->
-                        <!--android:layout_gravity="top"-->
-                        <!--android:background="@drawable/shadow_gradient" />-->
                 </FrameLayout>
 
 
