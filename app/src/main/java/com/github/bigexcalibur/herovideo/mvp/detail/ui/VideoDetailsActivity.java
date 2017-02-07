@@ -26,14 +26,15 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.github.bigexcalibur.herovideo.R;
-import com.github.bigexcalibur.herovideo.mediaplayer.MediaPlayer;
-import com.github.bigexcalibur.herovideo.mediaplayer.MediaPlayerActivity;
 import com.github.bigexcalibur.herovideo.mvp.common.ui.RxBaseActivity;
 import com.github.bigexcalibur.herovideo.mvp.detail.model.VideoDetailsInfo;
 import com.github.bigexcalibur.herovideo.mvp.test.ui.TestFragment;
 import com.github.bigexcalibur.herovideo.network.RetrofitHelper;
+import com.github.bigexcalibur.herovideo.network.auxiliary.UrlHelper;
 import com.github.bigexcalibur.herovideo.util.ConstantUtil;
 import com.github.bigexcalibur.herovideo.util.DisplayUtil;
 import com.github.bigexcalibur.herovideo.util.LogUtil;
@@ -87,6 +88,7 @@ public class VideoDetailsActivity extends RxBaseActivity {
     private String imgUrl;
 
     private VideoDetailsInfo.DataBean mVideoDetailsInfo;
+    private VideoIntroductionFragment mMVideoIntroductionFragment;
 
 
     @Override
@@ -105,25 +107,21 @@ public class VideoDetailsActivity extends RxBaseActivity {
             imgUrl = intent.getStringExtra(ConstantUtil.EXTRA_IMG_URL);
         }
 
-//    Glide.with(VideoDetailsActivity.this)
-//        .load(UrlHelper.getClearVideoPreviewUrl(imgUrl))
-//        .centerCrop()
-//        .diskCacheStrategy(DiskCacheStrategy.ALL)
-//        .placeholder(R.drawable.bili_default_image_tv)
-//        .dontAnimate()
-//        .into(mVideoPreview);
+    Glide.with(VideoDetailsActivity.this)
+        .load(UrlHelper.getClearVideoPreviewUrl(imgUrl))
+        .centerCrop()
+        .diskCacheStrategy(DiskCacheStrategy.ALL)
+        .placeholder(R.drawable.bili_default_image_tv)
+        .dontAnimate()
+        .into(mVideoPreview);
+
         loadData();
 
         mFAB.setClickable(false);
         mFAB.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.gray)));
         mFAB.setTranslationY(-getResources().getDimension(R.dimen.floating_action_button_size_half));
         mFAB.setOnClickListener(v -> {
-            String videoUrl = intent.getStringExtra(ConstantUtil.EXTRA_URL);
-            MediaPlayerActivity.configPlayer(VideoDetailsActivity.this)
-                    .setTitle(videoUrl)
-                    .setFullScreenOnly(true)
-                    .setScaleType(MediaPlayer.SCALETYPE_FILLPARENT)
-                    .play(videoUrl);
+            mMVideoIntroductionFragment.playVideo();
         });
 
         mAppBarLayout.addOnOffsetChangedListener(
@@ -211,7 +209,7 @@ public class VideoDetailsActivity extends RxBaseActivity {
     }
 
 
-    public static void launch(Activity activity, int aid, String imgUrl) {
+    public static void launch(Activity activity, String aid, String imgUrl) {
 
         Intent intent = new Intent(activity, VideoDetailsActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -279,17 +277,15 @@ public class VideoDetailsActivity extends RxBaseActivity {
 //          .dontAnimate()
 //          .into(mVideoPreview);
 //    }
-
-        VideoIntroductionFragment mVideoIntroductionFragment = VideoIntroductionFragment.newInstance(
-                av);
+        mMVideoIntroductionFragment = VideoIntroductionFragment.newInstance(av);
 //    VideoCommentFragment mVideoCommentFragment = VideoCommentFragment.newInstance(av);
         TestFragment mVideoCommentFragment = new TestFragment();
-        fragments.add(mVideoIntroductionFragment);
+        fragments.add(mMVideoIntroductionFragment);
         fragments.add(mVideoCommentFragment);
 
         setPagerTitle(String.valueOf(mVideoDetailsInfo.getStat().getReply()));
-    }
 
+    }
 
     private void setPagerTitle(String num) {
 

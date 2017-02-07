@@ -42,6 +42,8 @@
     <color name="yellow">#FDD835</color>
     <color name="yellow_dark">#FBC02D</color>
     <color name="yellow_trans">#99FDD835</color>
+    <color name="yellow_50">#FFD11B</color>
+    <color name="yellow_30">#FEA501</color>
 
     <color name="orange">#FF9800</color>
     <color name="orange_dark">#EF6C00</color>

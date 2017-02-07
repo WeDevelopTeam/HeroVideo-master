@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/main_content"
@@ -23,9 +23,9 @@
                 android:fitsSystemWindows="true"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:contentScrim="@color/theme_color_primary"
-                app:statusBarScrim="@color/theme_color_primary"
                 app:expandedTitleTextAppearance="@style/CollapsingToolbarTitleStyle.About"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:statusBarScrim="@color/theme_color_primary">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -44,13 +44,12 @@
                         />
                 </FrameLayout>
 
-
                 <com.bilibili.magicasakura.widgets.TintToolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-					app:popupTheme="@style/ThemeOverlay.AppCompat.Light"         
-					app:layout_collapseMode="pin"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                     app:titleTextAppearance="@style/ToolBar.TitleText"
                     >
 
@@ -61,8 +60,7 @@
                         android:gravity="center"
                         android:textColor="@color/white"
                         android:textSize="@dimen/default_medium_text_size"
-                        android:visibility="gone" />
-
+                        android:visibility="gone"/>
 
                     <TextView
                         android:id="@+id/tv_player"
@@ -74,7 +72,7 @@
                         android:text="@string/play_immediately"
                         android:textColor="@color/white"
                         android:textSize="@dimen/default_big_text_size"
-                        android:visibility="gone" />
+                        android:visibility="gone"/>
                 </com.bilibili.magicasakura.widgets.TintToolbar>
 
             </android.support.design.widget.CollapsingToolbarLayout>
@@ -89,26 +87,22 @@
                 app:tl_indicator_corner_radius="@dimen/tab_indicator_corner_small_radius"
                 app:tl_indicator_height="@dimen/tab_indicator_default_height"
                 app:tl_textSelectColor="@color/pink"
-                app:tl_textUnselectColor="@color/font_normal" />
+                app:tl_textUnselectColor="@color/font_normal"/>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/line_height"
-                android:background="@color/white_80" />
+                android:background="@color/white_80"/>
 
         </android.support.design.widget.AppBarLayout>
-
 
         <android.support.v4.view.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:overScrollMode="never"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
     </android.support.design.widget.CoordinatorLayout>
-
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -123,7 +117,5 @@
         app:layout_anchor="@id/app_bar_layout"
         app:layout_anchorGravity="bottom|right|end"
         app:pressedTranslationZ="@dimen/fab_default_elevation"
-        app:rippleColor="@color/theme_color_primary_dark" />
-
-
+        app:rippleColor="@color/theme_color_primary_dark"/>
 </FrameLayout>

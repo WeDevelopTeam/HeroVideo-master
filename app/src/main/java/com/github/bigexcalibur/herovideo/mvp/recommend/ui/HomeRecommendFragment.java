@@ -10,6 +10,7 @@ import android.view.View;
 import com.bilibili.magicasakura.utils.ThemeUtils;
 import com.github.bigexcalibur.herovideo.R;
 import com.github.bigexcalibur.herovideo.adapter.section.HomeRecommendBannerSection;
+import com.github.bigexcalibur.herovideo.adapter.section.HomeRecommendedSection;
 import com.github.bigexcalibur.herovideo.mvp.common.ui.RxLazyFragment;
 import com.github.bigexcalibur.herovideo.mvp.recommend.model.RecommendBannerInfo;
 import com.github.bigexcalibur.herovideo.mvp.recommend.model.RecommendInfo;
@@ -17,6 +18,7 @@ import com.github.bigexcalibur.herovideo.network.RetrofitHelper;
 import com.github.bigexcalibur.herovideo.ui.widget.CustomEmptyView;
 import com.github.bigexcalibur.herovideo.ui.widget.banner.BannerEntity;
 import com.github.bigexcalibur.herovideo.ui.widget.sectioned.SectionedRecyclerViewAdapter;
+import com.github.bigexcalibur.herovideo.util.ConstantUtil;
 import com.github.bigexcalibur.herovideo.util.SnackbarUtil;
 
 import java.util.ArrayList;
@@ -192,30 +194,30 @@ public class HomeRecommendFragment extends RxLazyFragment
             if (!TextUtils.isEmpty(type))
                 switch (type)
                 {
-//                    case ConstantUtil.TYPE_TOPIC:
-//                        //话题
+                    case ConstantUtil.TYPE_TOPIC:
+                        //话题
 //                        mSectionedAdapter.addSection(new HomeRecommendTopicSection(getActivity(),
 //                                results.get(i).getBody().get(0).getCover(),
 //                                results.get(i).getBody().get(0).getTitle(),
 //                                results.get(i).getBody().get(0).getParam()));
-//                        break;
-//                    case ConstantUtil.TYPE_ACTIVITY_CENTER:
+                        break;
+                    case ConstantUtil.TYPE_ACTIVITY_CENTER:
 //                        //活动中心
 //                        mSectionedAdapter.addSection(new HomeRecommendActivityCenterSection(
 //                                getActivity(),
 //                                results.get(i).getBody()));
-//                        break;
+                        break;
                     default:
-//                        mSectionedAdapter.addSection(new HomeRecommendedSection(
-//                                getActivity(),
-//                                results.get(i).getHead().getTitle(),
-//                                results.get(i).getType(),
-//                                results.get(1).getHead().getCount(),
-//                                results.get(i).getBody()));
+                        mSectionedAdapter.addSection(new HomeRecommendedSection(
+                                getActivity(),
+                                results.get(i).getHead().getTitle(),
+                                results.get(i).getType(),
+                                results.get(1).getHead().getCount(),
+                                results.get(i).getBody()));
                         break;
                 }
 
-            String style = results.get(i).getHead().getStyle();
+//            String style = results.get(i).getHead().getStyle();
 //            if (style.equals(ConstantUtil.STYLE_PIC))
 //            {
 //                mSectionedAdapter.addSection(new HomeRecommendPicSection(getActivity(),

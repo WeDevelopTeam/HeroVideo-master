@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:overScrollMode="never">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,6 +13,45 @@
         android:orientation="vertical"
         android:paddingTop="@dimen/video_details_margin_top"
         android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_general_margin">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:text="@string/selection"
+                android:textColor="@color/font_normal"
+                android:textSize="@dimen/default_small_text_size" />
+
+
+            <TextView
+                android:id="@+id/tv_update_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:drawableEnd="@drawable/register_bottom_arrow"
+                android:drawablePadding="@dimen/default_tiny_padding"
+                android:textColor="@color/black_alpha_45"
+                android:textSize="@dimen/default_tiny_text_size"
+                />
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/bangumi_selection_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_tiny_padding"
+            android:overScrollMode="never"
+            android:paddingBottom="@dimen/default_general_margin"
+            android:paddingTop="@dimen/default_tiny_padding" />
+
 
         <TextView
             android:id="@+id/tv_title"

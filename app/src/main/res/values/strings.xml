@@ -50,4 +50,11 @@
     <string name="collection">收藏</string>
     <string name="cache">缓存</string>
     <string name="add_follow">+关注</string>
+
+    <!--推荐-->
+    <string name="rank">排行榜</string>
+    <string name="home_tab_more">更多</string>
+    <string name="look_more">查看更多</string>
+    <string name="change_recommend">换一波推荐</string>
+    <string name="selection">选集</string>
 </resources>

@@ -799,9 +799,6 @@ public class MediaPlayer {
         return false;
     }
 
-
-
-
     class Query {
         private final Activity activity;
         private View view;

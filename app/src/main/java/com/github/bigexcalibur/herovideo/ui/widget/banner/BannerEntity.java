@@ -1,9 +1,6 @@
 package com.github.bigexcalibur.herovideo.ui.widget.banner;
 
 /**
- * Created by hcc on 16/8/24 21:37
- * 100332338@qq.com
- * <p>
  * Banner模型类
  */
 public class BannerEntity
