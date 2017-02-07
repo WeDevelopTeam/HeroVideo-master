@@ -5,6 +5,7 @@ import com.github.bigexcalibur.herovideo.mvp.common.application.HeroVideoApp;
 import com.github.bigexcalibur.herovideo.network.api.BiliAVSearchService;
 import com.github.bigexcalibur.herovideo.network.api.BiliAVVideoService;
 import com.github.bigexcalibur.herovideo.network.api.BiliAppService;
+import com.github.bigexcalibur.herovideo.network.api.LiveService;
 import com.github.bigexcalibur.herovideo.network.auxiliary.ApiConstants;
 import com.github.bigexcalibur.herovideo.util.CommonUtil;
 
@@ -58,13 +59,13 @@ public class RetrofitHelper
 //        return createApi(BiliAVVideoService.class, ApiConstants.RANK_BASE_URL);
 //    }
 
-//    public static LiveService getLiveAPI()
-//    {
-//
-//        return createApi(LiveService.class, ApiConstants.LIVE_BASE_URL);
-//    }
-//
-//
+    public static LiveService getLiveAPI()
+    {
+
+        return createApi(LiveService.class, ApiConstants.LIVE_BASE_URL);
+    }
+
+
     public static BiliAppService getBiliAppAPI()
     {
         return createApi(BiliAppService.class, ApiConstants.APP_BASE_URL);

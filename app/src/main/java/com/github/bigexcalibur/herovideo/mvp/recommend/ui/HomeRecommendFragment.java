@@ -178,7 +178,7 @@ public class HomeRecommendFragment extends RxLazyFragment
                         dataBean.getTitle(), dataBean.getImage())));
     }
 
-    protected void finishTask()
+    public void finishTask()
     {
 
         mSwipeRefreshLayout.setRefreshing(false);

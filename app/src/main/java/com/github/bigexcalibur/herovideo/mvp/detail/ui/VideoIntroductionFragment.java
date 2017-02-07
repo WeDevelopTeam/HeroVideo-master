@@ -179,7 +179,7 @@ public class VideoIntroductionFragment extends RxLazyFragment {
         }
     }
 
-
+    // 获取视频播放地址列表
     private void parseVideoUrl(String av) {
         RetrofitHelper.getBiliAVSearchAPI()
                 .getBiliAVSearchHtml(av)
@@ -223,8 +223,6 @@ public class VideoIntroductionFragment extends RxLazyFragment {
                 });
     }
 
-    String aid;
-
     public Map<String, String> parseSearchUrl(ResponseBody responseBody) {
         String body;
         try {
@@ -245,18 +243,7 @@ public class VideoIntroductionFragment extends RxLazyFragment {
             return null;
         }
 
-        // 创建 Pattern 对象
-        Pattern r2 = Pattern.compile("aid=([^\"&]+)");
-        // 现在创建 matcher 对象
-        Matcher m2 = r2.matcher(body);
-        if (m2.find()) {
-            aid = m2.group(1);
-        } else {
-            ToastUtil.ShortToast("未找到aid");
-            return null;
-        }
-
-        LogUtil.test("cid = " + cid + "  aid = " + aid);
+        LogUtil.test("cid = " + cid );
         String sign = Md5.strToMd5Low32("cid=" + cid + "&from=miniplay&player=1" + SECRETKEY_MINILOADER);
         Map<String, String> map = new HashMap<>();
         map.put("cid", cid);

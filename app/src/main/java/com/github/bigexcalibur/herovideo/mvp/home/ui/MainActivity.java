@@ -293,4 +293,9 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
     public void onSpecificThemeChange(View view) {
 
     }
+
+    @Override
+    public void finishTask() {
+
+    }
 }

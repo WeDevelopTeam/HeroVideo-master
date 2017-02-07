@@ -193,4 +193,8 @@ public abstract class RxLazyFragment extends RxFragment implements IRxBaseFragme
 
     }
 
+    @Override
+    public void finishTask() {
+
+    }
 }

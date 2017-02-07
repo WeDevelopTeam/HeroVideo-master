@@ -19,4 +19,6 @@ public interface IRxBaseView {
     void onGlobalThemeChange();
 
     void onSpecificThemeChange(View view);
+
+    void finishTask();
 }

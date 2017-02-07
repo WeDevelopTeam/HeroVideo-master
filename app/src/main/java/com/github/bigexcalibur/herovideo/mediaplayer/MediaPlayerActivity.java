@@ -28,6 +28,7 @@ public class MediaPlayerActivity extends Activity {
             Toast.makeText(this, R.string.giraffe_player_url_empty, Toast.LENGTH_SHORT).show();
         } else {
             player = new MediaPlayer(this);
+            player.live(true);
             player.setDefaultRetryTime(config.defaultRetryTime);
             player.setFullScreenOnly(config.fullScreenOnly);
             player.setScaleType(TextUtils.isEmpty(config.scaleType) ? MediaPlayer.SCALETYPE_FITPARENT : config.scaleType);
@@ -96,7 +97,7 @@ public class MediaPlayerActivity extends Activity {
         private long defaultRetryTime = 5 * 1000;
         private String title;
         private String url;
-        private boolean showNavIcon = true;
+        private boolean showNavIcon = false;
 
         private static boolean debug=true;
 

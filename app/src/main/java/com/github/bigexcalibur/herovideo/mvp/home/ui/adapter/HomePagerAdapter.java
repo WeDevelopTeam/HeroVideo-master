@@ -6,9 +6,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.github.bigexcalibur.herovideo.R;
+import com.github.bigexcalibur.herovideo.mvp.live.ui.HomeLiveFragment;
 import com.github.bigexcalibur.herovideo.mvp.recommend.ui.HomeRecommendFragment;
+import com.github.bigexcalibur.herovideo.mvp.region.ui.HomeRegionFragment;
 import com.github.bigexcalibur.herovideo.mvp.test.ui.Test2Fragment;
-import com.github.bigexcalibur.herovideo.mvp.test.ui.TestFragment;
 
 
 /**
@@ -33,7 +34,7 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
             switch (position) {
 
                 case 0:
-                    fragments[position] = new TestFragment();
+                    fragments[position] = HomeLiveFragment.newIntance();
                     break;
                 case 1:
                     fragments[position] = HomeRecommendFragment.newInstance();
@@ -42,14 +43,9 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
                     fragments[position] = new Test2Fragment();
                     break;
                 case 3:
-                    fragments[position] = new TestFragment();
+                    fragments[position] = HomeRegionFragment.newInstance();
                     break;
-                case 4:
-                    fragments[position] = new TestFragment();
-                    break;
-                case 5:
-                    fragments[position] = new TestFragment();
-                    break;
+
                 default:
                     break;
             }

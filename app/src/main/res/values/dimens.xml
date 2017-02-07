@@ -112,4 +112,23 @@
     <dimen name="home_recommend_foot_button_height">35dp</dimen>
     <dimen name="home_recommend_foot_refresh_margin">7dp</dimen>
     <dimen name="home_recommend_foot_bangumi_layout_height">40dp</dimen>
+
+
+    <!--home live size-->
+    <dimen name="live_video_player_height">280dp</dimen>
+    <dimen name="live_button_margin_bottom">60dp</dimen>
+    <dimen name="live_entrance_image_size">50dp</dimen>
+    <dimen name="live_item_layout_height">190dp</dimen>
+    <dimen name="live_item_image_height">120dp</dimen>
+    <dimen name="live_item_title_image_size">25dp</dimen>
+
+    <!--more layout size-->
+    <dimen name="more_item_image_size">50dp</dimen>
+
+    <!-- UserTagView -->
+    <dimen name="user_avatar_size">38dp</dimen>
+    <dimen name="user_avatar_margin">4dp</dimen>
+    <dimen name="user_tag_view_height">56dp</dimen>
+    <dimen name="user_name_min_width">72dp</dimen>
+    <dimen name="user_avatar_small_size">30dp</dimen>
 </resources>
