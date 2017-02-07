@@ -94,7 +94,6 @@ public class VideoIntroductionFragment extends RxLazyFragment {
 
     @Override
     public int getLayoutResId() {
-
         return R.layout.fragment_video_introduction;
     }
 

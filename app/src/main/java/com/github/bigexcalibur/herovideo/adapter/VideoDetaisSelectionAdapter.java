@@ -80,6 +80,4 @@ public class VideoDetaisSelectionAdapter extends AbsRecyclerViewAdapter {
             mIndex = $(R.id.tv_index);
         }
     }
-
-
 }

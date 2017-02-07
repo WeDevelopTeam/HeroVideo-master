@@ -32,7 +32,7 @@ import com.flyco.tablayout.SlidingTabLayout;
 import com.github.bigexcalibur.herovideo.R;
 import com.github.bigexcalibur.herovideo.mvp.common.ui.RxBaseActivity;
 import com.github.bigexcalibur.herovideo.mvp.detail.model.VideoDetailsInfo;
-import com.github.bigexcalibur.herovideo.mvp.test.ui.TestFragment;
+import com.github.bigexcalibur.herovideo.mvp.test.ui.Test2Fragment;
 import com.github.bigexcalibur.herovideo.network.RetrofitHelper;
 import com.github.bigexcalibur.herovideo.network.auxiliary.UrlHelper;
 import com.github.bigexcalibur.herovideo.util.ConstantUtil;
@@ -197,7 +197,6 @@ public class VideoDetailsActivity extends RxBaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
     private void setViewsTranslation(int target) {
 
         mFAB.setTranslationY(target);
@@ -267,19 +266,9 @@ public class VideoDetailsActivity extends RxBaseActivity {
         mFAB.setBackgroundTintList(
                 ColorStateList.valueOf(getResources().getColor(R.color.theme_color_primary)));
         mCollapsingToolbarLayout.setTitle("");
-
-//    if (TextUtils.isEmpty(imgUrl)) {
-//      Glide.with(VideoDetailsActivity.this)
-//          .load(mVideoDetailsInfo)
-//          .centerCrop()
-//          .diskCacheStrategy(DiskCacheStrategy.ALL)
-//          .placeholder(R.drawable.bili_default_image_tv)
-//          .dontAnimate()
-//          .into(mVideoPreview);
-//    }
         mMVideoIntroductionFragment = VideoIntroductionFragment.newInstance(av);
-//    VideoCommentFragment mVideoCommentFragment = VideoCommentFragment.newInstance(av);
-        TestFragment mVideoCommentFragment = new TestFragment();
+//    VideoCommentFragment mVieoCommentFragment = VideoCommentFragment.newInstance(av);
+        Test2Fragment mVideoCommentFragment = new Test2Fragment();
         fragments.add(mMVideoIntroductionFragment);
         fragments.add(mVideoCommentFragment);
 
