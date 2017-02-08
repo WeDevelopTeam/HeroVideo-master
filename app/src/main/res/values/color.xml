@@ -22,10 +22,12 @@
     <color name="pink">#fb7299</color>
     <color name="pink_dark">#b85671</color>
     <color name="pink_trans">#99f0486c</color>
+    <color name="pink_30">#FD7071</color>
 
     <color name="blue">#2196F3</color>
     <color name="blue_dark">#1565C0</color>
     <color name="blue_trans">#B41A78C3</color>
+    <color name="blue_30">#20C1FD</color>
 
     <color name="purple">#673AB7</color>
     <color name="purple_dark">#311B92</color>

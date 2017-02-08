@@ -2,6 +2,7 @@ package com.github.bigexcalibur.herovideo.network;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.github.bigexcalibur.herovideo.mvp.common.application.HeroVideoApp;
+import com.github.bigexcalibur.herovideo.network.api.BangumiService;
 import com.github.bigexcalibur.herovideo.network.api.BiliAVSearchService;
 import com.github.bigexcalibur.herovideo.network.api.BiliAVVideoService;
 import com.github.bigexcalibur.herovideo.network.api.BiliAppService;
@@ -107,11 +108,11 @@ public class RetrofitHelper
 //    }
 //
 //
-//    public static BangumiService getBangumiAPI()
-//    {
-//
-//        return createApi(BangumiService.class, ApiConstants.BANGUMI_BASE_URL);
-//    }
+    public static BangumiService getBangumiAPI()
+    {
+
+        return createApi(BangumiService.class, ApiConstants.BANGUMI_BASE_URL);
+    }
 //
 //
 //    public static SearchService getSearchAPI()

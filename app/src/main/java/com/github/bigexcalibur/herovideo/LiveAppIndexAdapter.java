@@ -417,7 +417,7 @@ public class LiveAppIndexAdapter extends RecyclerView.Adapter
                     @Override
                     public void onNext(String url) {
                         LogUtil.test(url);
-                        MediaPlayerActivity.configPlayer((Activity)context).setFullScreenOnly(true).play(url);
+                        MediaPlayerActivity.configPlayer((Activity)context).setTitle(livesBean.getTitle()).setFullScreenOnly(true).playLive(url);
                     }
                 });
     }

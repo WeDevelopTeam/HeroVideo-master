@@ -912,7 +912,9 @@ public class MediaPlayer {
          */
         @Override
         public boolean onDoubleTap(MotionEvent e) {
-            videoView.toggleAspectRatio();
+            doPauseResume();
+            show(defaultTimeout);
+//            videoView.toggleAspectRatio();
             return true;
         }
 

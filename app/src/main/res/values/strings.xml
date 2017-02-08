@@ -57,4 +57,12 @@
     <string name="look_more">查看更多</string>
     <string name="change_recommend">换一波推荐</string>
     <string name="selection">选集</string>
+
+    <!--番剧-->
+    <string name="to_them">追番</string>
+    <string name="time_line">放送表</string>
+    <string name="index">索引</string>
+    <string name="new_bangumi_serial">新番连载</string>
+    <string name="more_new_bangumi_serial">所有连载</string>
+    <string name="bangumi_recommend">番剧推荐</string>
 </resources>

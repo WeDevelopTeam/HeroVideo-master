@@ -28,7 +28,7 @@ public class MediaPlayerActivity extends Activity {
             Toast.makeText(this, R.string.giraffe_player_url_empty, Toast.LENGTH_SHORT).show();
         } else {
             player = new MediaPlayer(this);
-            player.live(true);
+            player.live(getIntent().getBooleanExtra("live",false));
             player.setDefaultRetryTime(config.defaultRetryTime);
             player.setFullScreenOnly(config.fullScreenOnly);
             player.setScaleType(TextUtils.isEmpty(config.scaleType) ? MediaPlayer.SCALETYPE_FITPARENT : config.scaleType);
@@ -97,7 +97,7 @@ public class MediaPlayerActivity extends Activity {
         private long defaultRetryTime = 5 * 1000;
         private String title;
         private String url;
-        private boolean showNavIcon = false;
+        private boolean showNavIcon = true;
 
         private static boolean debug=true;
 
@@ -125,6 +125,15 @@ public class MediaPlayerActivity extends Activity {
             Intent intent = new Intent(activity, MediaPlayerActivity.class);
             intent.putExtra("config", this);
             activity.startActivity(intent);
+        }
+
+        public void playLive(String url){
+            this.url = url;
+            Intent intent = new Intent(activity, MediaPlayerActivity.class);
+            intent.putExtra("config", this);
+            intent.putExtra("live",true);
+            activity.startActivity(intent);
+
         }
 
         public Config setDefaultRetryTime(long defaultRetryTime) {
