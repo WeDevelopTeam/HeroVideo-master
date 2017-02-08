@@ -11,6 +11,7 @@ import com.github.bigexcalibur.herovideo.adapter.section.HomeBangumiBannerSectio
 import com.github.bigexcalibur.herovideo.adapter.section.HomeBangumiItemSection;
 import com.github.bigexcalibur.herovideo.adapter.section.HomeBangumiNewSerialSection;
 import com.github.bigexcalibur.herovideo.adapter.section.HomeBangumiRecommendSection;
+import com.github.bigexcalibur.herovideo.adapter.section.HomeBangumiSeasonNewSection;
 import com.github.bigexcalibur.herovideo.mvp.bangumi.model.BangumiAppIndexInfo;
 import com.github.bigexcalibur.herovideo.mvp.bangumi.model.BangumiRecommendInfo;
 import com.github.bigexcalibur.herovideo.mvp.common.ui.RxLazyFragment;
@@ -212,7 +213,7 @@ public class HomeBangumiFragment extends RxLazyFragment
         mSectionedRecyclerViewAdapter.addSection(new HomeBangumiItemSection(getActivity()));
         mSectionedRecyclerViewAdapter.addSection(new HomeBangumiNewSerialSection(getActivity(), newBangumiSerials));
 //        mSectionedRecyclerViewAdapter.addSection(new HomeBangumiBobySection(getActivity(), bangumibobys));
-//        mSectionedRecyclerViewAdapter.addSection(new HomeBangumiSeasonNewSection(getActivity(), season, seasonNewBangumis));
+        mSectionedRecyclerViewAdapter.addSection(new HomeBangumiSeasonNewSection(getActivity(), season, seasonNewBangumis));
         mSectionedRecyclerViewAdapter.addSection(new HomeBangumiRecommendSection(getActivity(), bangumiRecommends));
         mSectionedRecyclerViewAdapter.notifyDataSetChanged();
     }
