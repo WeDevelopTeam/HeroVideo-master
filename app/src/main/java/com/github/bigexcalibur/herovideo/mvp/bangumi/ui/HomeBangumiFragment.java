@@ -31,9 +31,6 @@ import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by hcc on 16/8/4 21:18
- * 100332338@qq.com
- * <p/>
  * 首页番剧界面
  */
 public class HomeBangumiFragment extends RxLazyFragment
@@ -220,7 +217,6 @@ public class HomeBangumiFragment extends RxLazyFragment
 
     public void initEmptyView()
     {
-
         mSwipeRefreshLayout.setRefreshing(false);
         mCustomEmptyView.setVisibility(View.VISIBLE);
         mRecyclerView.setVisibility(View.GONE);
@@ -238,7 +234,6 @@ public class HomeBangumiFragment extends RxLazyFragment
 
     private void setRecycleNoScroll()
     {
-
         mRecyclerView.setOnTouchListener((v, event) -> mIsRefreshing);
     }
 }

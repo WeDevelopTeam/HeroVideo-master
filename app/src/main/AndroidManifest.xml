@@ -42,6 +42,10 @@
                   android:screenOrientation="landscape"
                   android:theme="@style/AppTheme.FullScreen"
             />
+        <activity android:name=".mvp.bangumi.ui.BangumiDetailsActivity"
+                  android:theme="@style/AppTheme.NoActionBar"
+                  android:screenOrientation="portrait"
+            />
     </application>
 
 </manifest>

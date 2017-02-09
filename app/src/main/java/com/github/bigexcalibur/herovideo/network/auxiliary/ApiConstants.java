@@ -1,9 +1,6 @@
 package com.github.bigexcalibur.herovideo.network.auxiliary;
 
 /**
- * Created by hcc on 2016/11/20 21:32
- * 100332338@qq.com
- * <p>
  * API常量类
  */
 

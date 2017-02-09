@@ -4,9 +4,6 @@ package com.github.bigexcalibur.herovideo.mvp.detail.model;
 import java.util.List;
 
 /**
- * Created by hcc on 16/8/8 10:09
- * 100332338@qq.com
- * <p/>
  * 视频详情模型类
  */
 public class VideoDetailsInfo

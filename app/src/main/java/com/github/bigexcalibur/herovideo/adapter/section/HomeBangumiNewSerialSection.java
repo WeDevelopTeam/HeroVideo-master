@@ -1,6 +1,7 @@
 package com.github.bigexcalibur.herovideo.adapter.section;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -12,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.github.bigexcalibur.herovideo.R;
 import com.github.bigexcalibur.herovideo.mvp.bangumi.model.BangumiAppIndexInfo;
+import com.github.bigexcalibur.herovideo.mvp.bangumi.ui.BangumiDetailsActivity;
 import com.github.bigexcalibur.herovideo.ui.widget.sectioned.StatelessSection;
 import com.github.bigexcalibur.herovideo.util.NumberUtil;
 
@@ -21,9 +23,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by hcc on 2016/10/14 19:29
- * 100332338@qq.com
- * <p>
  * 首页番剧新番连载Section
  */
 
@@ -77,8 +76,8 @@ public class HomeBangumiNewSerialSection extends StatelessSection
         itemViewHolder.mPlay.setText(NumberUtil.converString(serializingBean.getWatching_count()) + "人在看");
         itemViewHolder.mUpdate.setText("更新至第" + serializingBean.getNewest_ep_index() + "话");
 
-//        itemViewHolder.mCardView.setOnClickListener(v -> BangumiDetailsActivity.launch(
-//                (Activity) mContext, serializingBean.getSeason_id()));
+        itemViewHolder.mCardView.setOnClickListener(v -> BangumiDetailsActivity.launch(
+                (Activity) mContext, serializingBean.getSeason_id()));
     }
 
     @Override

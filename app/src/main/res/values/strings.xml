@@ -66,4 +66,8 @@
     <string name="more_new_bangumi_serial">所有连载</string>
     <string name="bangumi_recommend">番剧推荐</string>
     <string name="season_list">分季列表</string>
+    <string name="bangumi_follow">追番</string>
+    <string name="introduction">简介</string>
+    <string name="more">更多</string>
+    <string name="more_hot_comment">更多热门评论 >></string>
 </resources>
