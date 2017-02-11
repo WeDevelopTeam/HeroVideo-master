@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--Navigation-->
-    <color name="nav_head_image_background">#F8668D</color>
-    <color name="navigation_background_light">#FFF8F8F8</color>
-    <color name="nav_head_roung_text_background">#FB7BA0</color>
-    <color name="nav_head_round_background">#FDC7D6</color>
+    <!-- Grey-->
+    <color name="Grey_50">#FAFAFA</color>
+    <color name="Grey_100">#F5F5F5</color>
+    <color name="Grey_200">#EEEEEE</color>
+    <color name="Grey_300">#E0E0E0</color>
+    <color name="Grey_400">#BDBDBD</color>
+    <color name="Grey_500">#9E9E9E</color>
+    <color name="Grey_600">#757575</color>
+    <color name="Grey_700">#616161</color>
+    <color name="Grey_800">#424242</color>
+    <color name="Grey_900">#212121</color>
+    <color name="gray">#B8B8B8</color>
+    <color name="gray_20">#B3B3B3</color>
+    <color name="gray_80">#BEBBB4</color>
+    <color name="gray_light_30">#E5E5E5</color>
 
-    <color name="yellow_50">#FFD11B</color>
-    <color name="yellow_30">#FEA501</color>
-    <color name="pink_30">#FD7071</color>
-    <color name="blue_30">#20C1FD</color>
-    <color name="white_30">#F2F2F2</color>
-    <color name="white_80">#3b3b3b</color>
-    <color name="media_controller_bg">#99000000</color>
-    <color name="colorPrimary">#3b3b3b</color>
-    <color name="colorPrimaryDark">#222323</color>
+    <!--Black-->
+    <color name="black_80">#222222</color>
+    <color name="black_alpha_45">#71000000</color>
+    <color name="black_alpha_30">#48000000</color>
+    <color name="black_alpha_60">#4f000000</color>
+
 
 </resources>

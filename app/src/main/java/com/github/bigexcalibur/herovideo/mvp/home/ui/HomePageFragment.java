@@ -10,14 +10,14 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.bilibili.magicasakura.utils.ThemeUtils;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.github.bigexcalibur.herovideo.R;
 import com.github.bigexcalibur.herovideo.mvp.common.ui.RxLazyFragment;
 import com.github.bigexcalibur.herovideo.mvp.home.ui.adapter.HomePagerAdapter;
-import com.github.bigexcalibur.herovideo.rxbus.event.ThemeChangeEvent;
-import com.github.bigexcalibur.herovideo.ui.widget.CircleImageView;
+import com.github.bigexcalibur.herovideo.ui.widget.circle.CircleImageView;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 import java.util.ArrayList;
@@ -51,7 +51,6 @@ public class HomePageFragment extends RxLazyFragment
         return new HomePageFragment();
     }
 
-
     @Override
     public int getLayoutResId()
     {
@@ -76,7 +75,6 @@ public class HomePageFragment extends RxLazyFragment
 
     private void initSearchView()
     {
-
         //初始化SearchBar
         mSearchView.setVoiceSearch(false);
         mSearchView.setCursorDrawable(R.drawable.custom_cursor);
@@ -95,7 +93,6 @@ public class HomePageFragment extends RxLazyFragment
             @Override
             public boolean onQueryTextChange(String newText)
             {
-
                 return false;
             }
         });
@@ -104,7 +101,6 @@ public class HomePageFragment extends RxLazyFragment
 
     private void initViewPager()
     {
-
         HomePagerAdapter mHomeAdapter = new HomePagerAdapter(getChildFragmentManager(),
                 getApplicationContext());
         mViewPager.setOffscreenPageLimit(5);
@@ -114,17 +110,8 @@ public class HomePageFragment extends RxLazyFragment
     }
 
     @Override
-    public void onThemeChange(ThemeChangeEvent themeChangeEvent) {
-        super.onThemeChange(themeChangeEvent);
-        if (themeChangeEvent.eventType == ThemeChangeEvent.GLOBLE_CHANGE||themeChangeEvent.eventType == ThemeChangeEvent.INIT_CHANGE){
-            mSlidingTab.setBackgroundColor(ThemeUtils.getColorById(getActivity(),R.color.theme_color_primary));
-        }
-    }
-
-    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
     {
-
         menu.clear();
         inflater.inflate(R.menu.menu_main, menu);
 
@@ -136,15 +123,9 @@ public class HomePageFragment extends RxLazyFragment
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-
         int id = item.getItemId();
         switch (id)
         {
-            case R.id.id_action_game:
-                //游戏中心
-//                startActivity(new Intent(getActivity(), GameCentreActivity.class));
-                break;
-
             case R.id.id_action_download:
                 //离线缓存
 //                startActivity(new Intent(getActivity(), OffLineDownloadActivity.class));
@@ -154,21 +135,17 @@ public class HomePageFragment extends RxLazyFragment
         return super.onOptionsItemSelected(item);
     }
 
-
     @OnClick(R.id.navigation_layout)
     void toggleDrawer()
     {
-
         Activity activity = getActivity();
         if (activity instanceof MainActivity)
             ((MainActivity) activity).toggleDrawer();
     }
 
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data)
     {
-
         if (requestCode == MaterialSearchView.REQUEST_VOICE && resultCode == Activity.RESULT_OK)
         {
             ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
@@ -180,16 +157,13 @@ public class HomePageFragment extends RxLazyFragment
                     mSearchView.setQuery(searchWrd, false);
                 }
             }
-
             return;
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-
     public boolean isOpenSearchView()
     {
-
         return mSearchView.isSearchOpen();
     }
 
@@ -200,4 +174,43 @@ public class HomePageFragment extends RxLazyFragment
     }
 
 
+    @Override
+    public void onLazyLoad() {
+
+    }
+
+    @Override
+    public void onInvisible() {
+
+    }
+
+    @Override
+    public void loadData() {
+
+    }
+
+    @Override
+    public void FinishLoadData() {
+
+    }
+
+    @Override
+    public void onNodata() {
+
+    }
+
+    @Override
+    public void onNetDisConnected() {
+
+    }
+
+    @Override
+    public void onGlobalThemeChange() {
+        mSlidingTab.setBackgroundColor(ThemeUtils.getColorById(getActivity(),R.color.theme_color_primary));
+    }
+
+    @Override
+    public void onSpecificThemeChange(View view) {
+
+    }
 }

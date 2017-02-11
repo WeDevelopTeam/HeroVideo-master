@@ -36,7 +36,7 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_drawer_home" />
 
-                    <com.github.bigexcalibur.herovideo.ui.widget.CircleImageView
+                    <com.github.bigexcalibur.herovideo.ui.widget.circle.CircleImageView
                         android:id="@+id/toolbar_user_avatar"
                         android:layout_width="@dimen/circle_user_small_size"
                         android:layout_height="@dimen/circle_user_small_size"

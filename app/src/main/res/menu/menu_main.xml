@@ -4,13 +4,6 @@
       tools:context=".MainActivity">
 
 	<item
-		android:id="@+id/id_action_game"
-		android:icon="@drawable/ic_menu_top_game_center"
-		android:orderInCategory="100"
-		android:title="游戏中心"
-		app:showAsAction="always"/>
-
-	<item
 		android:id="@+id/id_action_download"
 		android:icon="@drawable/ic_toolbar_menu_download"
 		android:orderInCategory="100"

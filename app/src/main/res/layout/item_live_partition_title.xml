@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="@dimen/default_grow_margin"
+        android:padding="@dimen/default_general_margin">
+
+        <ImageView
+            android:id="@+id/item_live_partition_icon"
+            android:layout_width="@dimen/live_item_title_image_size"
+            android:layout_height="@dimen/live_item_title_image_size" />
+
+        <TextView
+            android:id="@+id/item_live_partition_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_tiny_padding"
+            android:layout_marginTop="@dimen/default_tiny_margin"
+            android:layout_toEndOf="@+id/item_live_partition_icon"
+            android:gravity="center"
+            android:textColor="@color/font_normal"
+            android:textSize="@dimen/default_small_text_size"
+            tools:text="直播分类名称" />
+
+        <TextView
+            android:id="@+id/item_live_partition_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_tiny_padding"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:textColor="@color/font_normal"
+            android:textSize="@dimen/default_small_text_size"
+            tools:text="当前直播人数"
+            android:drawablePadding="@dimen/default_tiny_margin"
+            android:drawableEnd="@drawable/ic_light_gray_arrow_right" />
+
+    </RelativeLayout>
+</LinearLayout>

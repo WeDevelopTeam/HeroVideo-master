@@ -70,12 +70,15 @@ public class LogUtil {
     }
 
     public static void v(String msg) {
-
         e(msg);
     }
 
     public static void d(String msg) {
-
         v(msg);
+    }
+
+    public static void test(String msg){
+        if (isShow)
+            Log.d("test_",msg);
     }
 }

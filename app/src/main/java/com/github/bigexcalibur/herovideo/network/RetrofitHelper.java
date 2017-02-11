@@ -2,6 +2,13 @@ package com.github.bigexcalibur.herovideo.network;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.github.bigexcalibur.herovideo.mvp.common.application.HeroVideoApp;
+import com.github.bigexcalibur.herovideo.network.api.BangumiService;
+import com.github.bigexcalibur.herovideo.network.api.BiliAVSearchService;
+import com.github.bigexcalibur.herovideo.network.api.BiliAVVideoService;
+import com.github.bigexcalibur.herovideo.network.api.BiliApiService;
+import com.github.bigexcalibur.herovideo.network.api.BiliAppService;
+import com.github.bigexcalibur.herovideo.network.api.LiveService;
+import com.github.bigexcalibur.herovideo.network.auxiliary.ApiConstants;
 import com.github.bigexcalibur.herovideo.util.CommonUtil;
 
 import java.io.File;
@@ -15,6 +22,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by hcc on 16/8/4 21:18
@@ -32,26 +42,44 @@ public class RetrofitHelper
         initOkHttpClient();
     }
 
-//    public static LiveService getLiveAPI()
+    public static OkHttpClient getOkHttpClient(){
+        return mOkHttpClient;
+    }
+
+    public static BiliAVSearchService getBiliAVSearchAPI()
+    {
+        return createApi(BiliAVSearchService.class, ApiConstants.RANK_BASE_URL);
+    }
+
+    public static BiliAVVideoService getBiliAVVideoAPI()
+    {
+        return createApi(BiliAVVideoService.class,ApiConstants.VIDEO_INTERFACE_URL);
+    }
+//
+//    public static BiliAVVideoService getBilibiliVideo()
 //    {
-//
-//        return createApi(LiveService.class, ApiConstants.LIVE_BASE_URL);
+//        return createApi(BiliAVVideoService.class, ApiConstants.RANK_BASE_URL);
 //    }
+
+    public static LiveService getLiveAPI()
+    {
+
+        return createApi(LiveService.class, ApiConstants.LIVE_BASE_URL);
+    }
+
+
+    public static BiliAppService getBiliAppAPI()
+    {
+        return createApi(BiliAppService.class, ApiConstants.APP_BASE_URL);
+    }
+
 //
-//
-//    public static BiliAppService getBiliAppAPI()
-//    {
-//
-//        return createApi(BiliAppService.class, ApiConstants.APP_BASE_URL);
-//    }
-//
-//
-//    public static BiliApiService getBiliAPI()
-//    {
-//
-//        return createApi(BiliApiService.class, ApiConstants.API_BASE_URL);
-//    }
-//
+    public static BiliApiService getBiliAPI()
+    {
+
+        return createApi(BiliApiService.class, ApiConstants.API_BASE_URL);
+    }
+
 //
 //    public static BiliGoService getBiliGoAPI()
 //    {
@@ -81,11 +109,11 @@ public class RetrofitHelper
 //    }
 //
 //
-//    public static BangumiService getBangumiAPI()
-//    {
-//
-//        return createApi(BangumiService.class, ApiConstants.BANGUMI_BASE_URL);
-//    }
+    public static BangumiService getBangumiAPI()
+    {
+
+        return createApi(BangumiService.class, ApiConstants.BANGUMI_BASE_URL);
+    }
 //
 //
 //    public static SearchService getSearchAPI()
@@ -108,31 +136,31 @@ public class RetrofitHelper
 //    }
 //
 //
-//    /**
-//     * 根据传入的baseUrl，和api创建retrofit
-//     *
-//     * @param clazz
-//     * @param baseUrl
-//     * @param <T>
-//     * @return
-//     */
-//    private static <T> T createApi(Class<T> clazz, String baseUrl)
-//    {
-//
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl(baseUrl)
-//                .client(mOkHttpClient)
-//                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
-//
-//        return retrofit.create(clazz);
-//    }
-//
-//
-//    /**
-//     * 初始化OKHttpClient,设置缓存,设置超时时间,设置打印日志,设置UA拦截器
-//     */
+    /**
+     * 根据传入的baseUrl，和api创建retrofit
+     *
+     * @param clazz
+     * @param baseUrl
+     * @param <T>
+     * @return
+     */
+    private static <T> T createApi(Class<T> clazz, String baseUrl)
+    {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(baseUrl)
+                .client(mOkHttpClient)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        return retrofit.create(clazz);
+    }
+
+
+    /**
+     * 初始化OKHttpClient,设置缓存,设置超时时间,设置打印日志,设置UA拦截器
+     */
     private static void initOkHttpClient()
     {
 

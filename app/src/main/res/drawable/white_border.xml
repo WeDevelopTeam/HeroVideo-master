@@ -14,7 +14,6 @@
         android:right="2dp"
         android:top="2dp" />
 
-
     <size
         android:width="25dp"
         android:height="10dp" />

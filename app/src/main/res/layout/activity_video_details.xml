@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/appbar_parallax_max_height"
+                android:fitsSystemWindows="true"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:contentScrim="@color/theme_color_primary"
+                app:expandedTitleTextAppearance="@style/CollapsingToolbarTitleStyle.About"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:statusBarScrim="@color/theme_color_primary">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/appbar_parallax_max_height"
+                    android:background="@color/window_background"
+                    android:fitsSystemWindows="true"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/video_preview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_80"
+                        android:scaleType="fitXY"
+                        app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+                        />
+                </FrameLayout>
+
+                <com.bilibili.magicasakura.widgets.TintToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:titleTextAppearance="@style/ToolBar.TitleText"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_av"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/default_medium_text_size"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/tv_player"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/default_tiny_margin"
+                        android:drawableStart="@drawable/ic_tv_play"
+                        android:gravity="center"
+                        android:text="@string/play_immediately"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/default_big_text_size"
+                        android:visibility="gone"/>
+                </com.bilibili.magicasakura.widgets.TintToolbar>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tab_layout_small_height"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/white_80"
+                app:tl_indicator_color="@color/pink"
+                app:tl_indicator_corner_radius="@dimen/tab_indicator_corner_small_radius"
+                app:tl_indicator_height="@dimen/tab_indicator_default_height"
+                app:tl_textSelectColor="@color/pink"
+                app:tl_textUnselectColor="@color/font_normal"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:background="@color/white_80"/>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/floating_action_button_margin"
+        android:layout_marginTop="@dimen/fab_margin_height"
+        android:src="@drawable/ic_fab_play"
+        app:backgroundTint="@color/theme_color_primary"
+        app:elevation="@dimen/fab_default_elevation"
+        app:layout_anchor="@id/app_bar_layout"
+        app:layout_anchorGravity="bottom|right|end"
+        app:pressedTranslationZ="@dimen/fab_default_elevation"
+        app:rippleColor="@color/theme_color_primary_dark"/>
+</FrameLayout>

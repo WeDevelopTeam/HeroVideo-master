@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/default_general_margin">
+
+
+        <ImageView
+            android:id="@+id/iv_season"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_season"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_general_margin"
+            android:textColor="@color/font_normal"
+            android:textSize="@dimen/default_small_text_size" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_all_new_bangumi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:drawableEnd="@drawable/ic_gray_arrow_right"
+        android:drawablePadding="@dimen/default_tiny_margin"
+        android:padding="@dimen/default_general_margin"
+        android:text="@string/season_list"
+        android:textColor="@color/black_alpha_30"
+        android:textSize="@dimen/default_tiny_text_size" />
+
+
+</RelativeLayout>
+

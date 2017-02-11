@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.github.bigexcalibur.herovideo">
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -24,6 +24,11 @@
 
         </activity>
 
+        <activity android:name=".mvp.detail.ui.VideoDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            />
+
         <activity android:name=".mvp.test.ui.TestPlayActivity"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:launchMode="singleTop"
@@ -31,14 +36,15 @@
                   android:theme="@style/AppTheme.FullScreen"
             />
 
-        <activity android:name=".mediaplayer.VideoPlayerActivity"
-                  android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
-                  android:exported="false"
-                  android:label="@string/app_name"
+        <activity android:name=".mediaplayer.MediaPlayerActivity"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
                   android:launchMode="singleTop"
                   android:screenOrientation="landscape"
                   android:theme="@style/AppTheme.FullScreen"
-                  android:windowSoftInputMode="stateAlwaysHidden"
+            />
+        <activity android:name=".mvp.bangumi.ui.BangumiDetailsActivity"
+                  android:theme="@style/AppTheme.NoActionBar"
+                  android:screenOrientation="portrait"
             />
     </application>
 

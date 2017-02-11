@@ -11,8 +11,8 @@ import android.view.WindowManager;
 
 import com.bilibili.magicasakura.utils.ThemeUtils;
 import com.github.bigexcalibur.herovideo.R;
-import com.github.bigexcalibur.herovideo.rxbus.RxBus;
-import com.github.bigexcalibur.herovideo.rxbus.event.ThemeChangeEvent;
+import com.github.bigexcalibur.herovideo.mvp.common.presenter.RxBaseViewPresenter;
+import com.github.bigexcalibur.herovideo.mvp.common.view.IRxBaseView;
 import com.github.bigexcalibur.herovideo.ui.widget.ThemePickDialog;
 import com.github.bigexcalibur.herovideo.util.LogUtil;
 import com.github.bigexcalibur.herovideo.util.ThemeHelper;
@@ -25,9 +25,10 @@ import butterknife.Unbinder;
  * Created by Xie.Zhou on 2017/1/3.
  */
 
-public abstract class RxBaseActivity extends RxAppCompatActivity implements ThemePickDialog.ClickListener {
+public abstract class RxBaseActivity extends RxAppCompatActivity implements ThemePickDialog.ClickListener, IRxBaseView {
 
     private Unbinder bind;
+    private RxBaseViewPresenter mRxBaseViewPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +41,20 @@ public abstract class RxBaseActivity extends RxAppCompatActivity implements Them
         initViews(savedInstanceState);
         //初始化ToolBar
         initToolbar();
-        // 发送MagicaSacura初始化的事件
-        RxBus.getInstance().post(new ThemeChangeEvent(ThemeChangeEvent.INIT_CHANGE));
+        //初始化Presenter
+        initPresenter();
+        // 初始化主题
+        initTheme();
+    }
+
+    protected void initTheme(){
+        //初始化RxBus事件监听
+        mRxBaseViewPresenter.initThemeChangeSubscription();
+        mRxBaseViewPresenter.onInitThemeChange();
+    }
+
+    protected void initPresenter(){
+        mRxBaseViewPresenter = new RxBaseViewPresenter(this);
     }
 
     public abstract int getLayoutId();
@@ -50,52 +63,48 @@ public abstract class RxBaseActivity extends RxAppCompatActivity implements Them
 
     public abstract void initToolbar();
 
+    @Override
     public void loadData() {
-    }
-
-    public void showProgressBar() {
-    }
-
-    public void hideProgressBar() {
-    }
-
-    public void initRecyclerView() {
-    }
-
-    public void initRefreshLayout() {
-    }
-
-    public void finishTask() {
-    }
-
-    // MagicSakura 主题切换初始化
-    public void onRefreshGlobal(){
-
-    }
-
-    public void onRefreshSpecificView(View view){
 
     }
 
     @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
+    public void FinishLoadData(){
+
+    }
+
+    @Override
+    public void onNodata() {
+
+    }
+
+    @Override
+    public void onNetDisConnected() {
+
+    }
+
+    protected void initStatusBar(){
         if (Build.VERSION.SDK_INT >= 21) {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(ThemeUtils.getColorById(this, R.color.theme_color_primary_dark));
+            window.setStatusBarColor(ThemeUtils.getColorById(this, R.color.theme_color_primary));
             ActivityManager.TaskDescription description = new ActivityManager.TaskDescription(null, null, ThemeUtils.getThemeAttrColor(this, android.R.attr.colorPrimary));
             setTaskDescription(description);
         }
     }
 
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        initStatusBar();
+    }
 
     // MagicSakura 主题切换
 
     @Override
     public void onConfirm(int currentTheme) {
-        LogUtil.d("onConfirm = " +currentTheme );
+        LogUtil.d("onConfirm = " + currentTheme);
 
         if (ThemeHelper.getTheme(RxBaseActivity.this) != currentTheme) {
             ThemeHelper.setTheme(RxBaseActivity.this, currentTheme);
@@ -107,21 +116,17 @@ public abstract class RxBaseActivity extends RxAppCompatActivity implements Them
                                 final RxBaseActivity context = RxBaseActivity.this;
                                 ActivityManager.TaskDescription taskDescription = new ActivityManager.TaskDescription(null, null, ThemeUtils.getThemeAttrColor(context, android.R.attr.colorPrimary));
                                 setTaskDescription(taskDescription);
-                                getWindow().setStatusBarColor(ThemeUtils.getColorById(context, R.color.theme_color_primary_dark));
+                                getWindow().setStatusBarColor(ThemeUtils.getColorById(context, R.color.theme_color_primary));
                             }
-
-                            // 方便子类重写
-                            onRefreshGlobal();
                             // post主题切换的消息,方便Fragment等完成主题切换
-                            RxBus.getInstance().post(new ThemeChangeEvent(ThemeChangeEvent.GLOBLE_CHANGE));
+                            mRxBaseViewPresenter.onGlobalThemeChange();
                         }
 
                         @Override
                         public void refreshSpecificView(View view) {
                             //TODO: will do this for each traversal
                             // post主题切换的消息
-                            onRefreshSpecificView(view);
-                            RxBus.getInstance().post(new ThemeChangeEvent(ThemeChangeEvent.SPECIFIC_CHANGE,view));
+                            mRxBaseViewPresenter.onSpecificThemeChange(view);
                         }
                     }
             );
@@ -134,5 +139,16 @@ public abstract class RxBaseActivity extends RxAppCompatActivity implements Them
     protected void onDestroy() {
         super.onDestroy();
         bind.unbind();
+        mRxBaseViewPresenter.onDestroyView();
+    }
+
+    @Override
+    public void onGlobalThemeChange() {
+
+    }
+
+    @Override
+    public void onSpecificThemeChange(View view) {
+
     }
 }

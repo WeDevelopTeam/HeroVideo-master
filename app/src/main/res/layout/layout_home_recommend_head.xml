@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/home_recommend_head_layout_height"
+    android:paddingEnd="@dimen/default_general_margin"
+    android:paddingStart="@dimen/default_general_margin"
+    android:paddingTop="@dimen/default_general_margin">
+
+
+    <ImageView
+        android:id="@+id/item_type_img"
+        android:layout_width="@dimen/home_recommend_head_image_size"
+        android:layout_height="@dimen/home_recommend_head_image_size"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/item_type_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/default_tiny_padding"
+        android:layout_toEndOf="@+id/item_type_img"
+        android:gravity="center"
+        android:textColor="@color/font_normal"
+        android:textSize="@dimen/default_small_text_size" />
+
+
+    <TextView
+        android:id="@+id/item_type_rank_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/btn_rank_bg"
+        android:layout_centerInParent="true"
+        android:drawablePadding="@dimen/default_tiny_padding"
+        android:drawableStart="@drawable/ic_header_indicator_rank"
+        android:padding="@dimen/default_tiny_padding"
+        android:text="@string/rank"
+        android:textColor="@color/white"
+        android:textSize="@dimen/default_tiny_text_size"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:id="@+id/item_live_all_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toStartOf="@+id/item_type_more"
+        android:padding="@dimen/default_tiny_padding"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/default_small_text_size"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/item_type_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/btn_more_bg"
+        android:clickable="true"
+        android:text="@string/home_tab_more"
+        android:textColor="@color/white"
+        android:textSize="@dimen/default_tiny_text_size"
+        android:visibility="visible" />
+</RelativeLayout>
+
