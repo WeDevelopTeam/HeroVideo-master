@@ -8,3 +8,5 @@ https://github.com/Bilibili/ijkplayer
 https://github.com/HotBitmapGG/bilibili-android-client
 
 https://github.com/Rukey7/IjkPlayerView
+
+https://github.com/soimort/you-get
